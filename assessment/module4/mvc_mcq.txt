@@ -1,0 +1,707 @@
+100 multiple-choice questions (MCQs) with answers on ASP.NET MVC:
+
+1. **What does MVC stand for?**
+   - A) Model View Controller
+   - B) Module View Controller
+   - C) Model View Component
+   - D) Model View Collection
+   - **Answer:** A
+
+2. **Which namespace is used for ASP.NET MVC?**
+   - A) System.Web.Mvc
+   - B) System.Mvc
+   - C) System.Web.UI
+   - D) System.Web.Routing
+   - **Answer:** A
+
+3. **Which method is used to add custom routes in ASP.NET MVC?**
+   - A) RouteConfig.RegisterRoutes
+   - B) RouteTable.Routes.MapRoute
+   - C) RouteConfig.Routes.MapRoute
+   - D) RouteTable.RegisterRoutes
+   - **Answer:** B
+
+4. **Which attribute is used to restrict access to actions to only authenticated users?**
+   - A) Authorize
+   - B) AllowAnonymous
+   - C) ValidateAntiForgeryToken
+   - D) OutputCache
+   - **Answer:** A
+
+5. **In which file are the global application-level settings and routes configured?**
+   - A) Web.config
+   - B) Global.asax
+   - C) RouteConfig.cs
+   - D) Startup.cs
+   - **Answer:** B
+
+6. **Which method is used to return JSON data in ASP.NET MVC?**
+   - A) Return Json()
+   - B) JsonResult()
+   - C) Json()
+   - D) Return JsonResult()
+   - **Answer:** C
+
+7. **Which of the following is a return type of a controller action in ASP.NET MVC?**
+   - A) ActionResult
+   - B) ViewResult
+   - C) JsonResult
+   - D) All of the above
+   - **Answer:** D
+
+8. **Which method is used to bind a view with a model in ASP.NET MVC?**
+   - A) Bind()
+   - B) ModelBind()
+   - C) Model()
+   - D) None of the above
+   - **Answer:** D
+
+9. **Which view engine is introduced by default in ASP.NET MVC?**
+   - A) WebForms
+   - B) Razor
+   - C) ASPX
+   - D) Spark
+   - **Answer:** B
+
+10. **How do you specify a view to be rendered within a different layout?**
+    - A) @ViewBag.Layout = "LayoutName"
+    - B) @Layout = "LayoutName"
+    - C) @RenderPage("LayoutName")
+    - D) @RenderBody("LayoutName")
+    - **Answer:** B
+
+11. **What is the default HTTP method for an action method in ASP.NET MVC?**
+    - A) GET
+    - B) POST
+    - C) PUT
+    - D) DELETE
+    - **Answer:** A
+
+12. **Which of the following helpers can be used to generate a form element in a Razor view?**
+    - A) Html.Form()
+    - B) Html.BeginForm()
+    - C) Html.StartForm()
+    - D) Html.CreateForm()
+    - **Answer:** B
+
+13. **Which lifecycle method is called when an action is executed?**
+    - A) OnActionExecuting
+    - B) OnActionExecuted
+    - C) ExecuteResult
+    - D) ExecuteAction
+    - **Answer:** B
+
+14. **How can you handle errors in an ASP.NET MVC application?**
+    - A) Using try-catch blocks
+    - B) Using the HandleError attribute
+    - C) Both A and B
+    - D) None of the above
+    - **Answer:** C
+
+15. **Which method is used to call the action method directly from another controller?**
+    - A) RedirectToAction
+    - B) Redirect
+    - C) CallAction
+    - D) InvokeAction
+    - **Answer:** A
+
+16. **How do you define a strongly-typed view?**
+    - A) @model ModelType
+    - B) @ModelType ModelType
+    - C) @modelType ModelType
+    - D) @Model ModelType
+    - **Answer:** A
+
+17. **Which HTML helper is used to generate a label in ASP.NET MVC?**
+    - A) Html.Label()
+    - B) Html.LabelFor()
+    - C) Html.LabelText()
+    - D) Html.LabelName()
+    - **Answer:** B
+
+18. **Which of the following is a feature of Razor view engine?**
+    - A) Intellisense support
+    - B) Clean and lightweight syntax
+    - C) Both A and B
+    - D) None of the above
+    - **Answer:** C
+
+19. **What is the purpose of the ActionName attribute in ASP.NET MVC?**
+    - A) To rename an action method
+    - B) To specify an alternative name for an action method
+    - C) To set the name of the controller
+    - D) To set the name of the view
+    - **Answer:** B
+
+20. **Which file extension is used for Razor views?**
+    - A) .cshtml
+    - B) .vbhtml
+    - C) Both A and B
+    - D) .aspx
+    - **Answer:** C
+
+21. **What does the @ symbol denote in Razor syntax?**
+    - A) Beginning of a Razor code block
+    - B) Beginning of an HTML element
+    - C) Beginning of a comment
+    - D) Beginning of a Razor helper
+    - **Answer:** A
+
+22. **Which attribute is used to validate anti-forgery tokens?**
+    - A) [ValidateAntiForgeryToken]
+    - B) [AntiForgeryToken]
+    - C) [ValidateToken]
+    - D) [AntiForgery]
+    - **Answer:** A
+
+23. **How can you implement a partial view in ASP.NET MVC?**
+    - A) @Html.Partial("PartialViewName")
+    - B) @Html.RenderPartial("PartialViewName")
+    - C) Both A and B
+    - D) None of the above
+    - **Answer:** C
+
+24. **Which attribute is used to specify that an action supports the POST method?**
+    - A) [HttpPost]
+    - B) [HttpPostMethod]
+    - C) [Post]
+    - D) [PostMethod]
+    - **Answer:** A
+
+25. **Which object in ASP.NET MVC is responsible for handling requests and responses?**
+    - A) HttpContext
+    - B) Controller
+    - C) ActionResult
+    - D) HttpRequest
+    - **Answer:** A
+
+26. **How can you generate a URL for an action method?**
+    - A) Url.Action()
+    - B) Url.Generate()
+    - C) Url.Route()
+    - D) Url.Link()
+    - **Answer:** A
+
+27. **What is the purpose of the TempData dictionary?**
+    - A) To store data temporarily between controller actions
+    - B) To persist data between requests
+    - C) To store data permanently
+    - D) To cache data
+    - **Answer:** A
+
+28. **Which attribute is used to specify that an action supports the GET method?**
+    - A) [HttpGet]
+    - B) [HttpGetMethod]
+    - C) [Get]
+    - D) [GetMethod]
+    - **Answer:** A
+
+29. **Which method is used to render a view as a partial view?**
+    - A) PartialView()
+    - B) View()
+    - C) RenderPartial()
+    - D) RenderView()
+    - **Answer:** A
+
+30. **Which of the following is true about the ViewBag in ASP.NET MVC?**
+    - A) It is a dynamic object
+    - B) It is strongly typed
+    - C) It can be used to pass data from the controller to the view
+    - D) Both A and C
+    - **Answer:** D
+
+31. **What is the default name of the controller in an ASP.NET MVC application if none is specified?**
+    - A) Home
+    - B) Default
+    - C) Index
+    - D) Main
+    - **Answer:** A
+
+32. **Which filter is used to handle exceptions in ASP.NET MVC?**
+    - A) HandleError
+    - B) ExceptionHandler
+    - C) ErrorHandler
+    - D) ExceptionFilter
+    - **Answer:** A
+
+33. **How do you apply a global filter in ASP.NET MVC?**
+    - A) In the Global.asax file
+    - B) In the FilterConfig.cs file
+    - C) In the RouteConfig.cs file
+    - D) In the Web.config file
+    - **Answer:** B
+
+34. **What is the default view engine in ASP.NET MVC?**
+    - A) WebForms
+    - B) Razor
+    - C) Spark
+    - D) NHaml
+    - **Answer:** B
+
+35. **Which method is used to return a file in an ASP.NET MVC action?**
+    - A) File()
+    - B) ReturnFile()
+    - C) DownloadFile()
+    - D) SendFile()
+    - **Answer:** A
+
+36. **Which property of the ViewData dictionary is used to pass data to the view?**
+    - A) ViewData["Key"]
+    - B) ViewBag
+
+.Key
+    - C) TempData["Key"]
+    - D) Both A and B
+    - **Answer:** D
+
+37. **Which of the following is true about the ViewBag in ASP.NET MVC?**
+    - A) It is a strongly-typed object
+    - B) It is a dynamic object
+    - C) It is available only during the current request
+    - D) Both B and C
+    - **Answer:** D
+
+38. **What is the purpose of the ActionResult class in ASP.NET MVC?**
+    - A) To represent the result of an action method
+    - B) To store the result of a database query
+    - C) To store the result of a web service call
+    - D) To represent the result of a form submission
+    - **Answer:** A
+
+39. **Which of the following is true about the ViewData dictionary in ASP.NET MVC?**
+    - A) It is strongly-typed
+    - B) It is dynamic
+    - C) It can store data as key-value pairs
+    - D) It is available only during the current request
+    - **Answer:** C
+
+40. **Which method is used to redirect to a different action method?**
+    - A) RedirectToAction()
+    - B) RedirectToMethod()
+    - C) RedirectToRoute()
+    - D) RedirectToView()
+    - **Answer:** A
+
+41. **How can you specify a custom error page for a 404 error in ASP.NET MVC?**
+    - A) By configuring the customErrors section in Web.config
+    - B) By using the HandleError attribute
+    - C) By using the ErrorController
+    - D) By configuring the 404 section in Global.asax
+    - **Answer:** A
+
+42. **Which method is used to render a view in ASP.NET MVC?**
+    - A) Render()
+    - B) RenderView()
+    - C) View()
+    - D) RenderPartial()
+    - **Answer:** C
+
+43. **What is the purpose of the HtmlHelper class in ASP.NET MVC?**
+    - A) To generate HTML elements in a view
+    - B) To generate CSS elements in a view
+    - C) To generate JavaScript elements in a view
+    - D) To generate XML elements in a view
+    - **Answer:** A
+
+44. **Which of the following is a type of filter in ASP.NET MVC?**
+    - A) Authorization
+    - B) Action
+    - C) Result
+    - D) All of the above
+    - **Answer:** D
+
+45. **Which of the following methods is used to send raw JSON data to the client?**
+    - A) Json()
+    - B) JsonResult()
+    - C) RawJson()
+    - D) JsonData()
+    - **Answer:** A
+
+46. **How do you specify a route parameter in ASP.NET MVC?**
+    - A) {parameterName}
+    - B) [parameterName]
+    - C) (parameterName)
+    - D) <parameterName>
+    - **Answer:** A
+
+47. **What is the purpose of the RouteConfig class in ASP.NET MVC?**
+    - A) To configure routes for the application
+    - B) To configure filters for the application
+    - C) To configure view engines for the application
+    - D) To configure controllers for the application
+    - **Answer:** A
+
+48. **Which method is used to return a view from an action method?**
+    - A) ReturnView()
+    - B) Return()
+    - C) View()
+    - D) RenderView()
+    - **Answer:** C
+
+49. **What is the purpose of the TempData dictionary in ASP.NET MVC?**
+    - A) To store data temporarily between controller actions
+    - B) To persist data between requests
+    - C) To store data permanently
+    - D) To cache data
+    - **Answer:** A
+
+50. **Which HTML helper is used to generate a dropdown list in ASP.NET MVC?**
+    - A) Html.DropDownList()
+    - B) Html.SelectList()
+    - C) Html.ComboBox()
+    - D) Html.ListBox()
+    - **Answer:** A
+
+51. **Which attribute is used to specify that an action supports the DELETE method?**
+    - A) [HttpDelete]
+    - B) [HttpDeleteMethod]
+    - C) [Delete]
+    - D) [DeleteMethod]
+    - **Answer:** A
+
+52. **Which method is used to generate a URL for a specified route?**
+    - A) Url.RouteUrl()
+    - B) Url.GenerateUrl()
+    - C) Url.ActionUrl()
+    - D) Url.CreateUrl()
+    - **Answer:** A
+
+53. **What is the purpose of the OutputCache attribute in ASP.NET MVC?**
+    - A) To cache the output of an action method
+    - B) To cache the input of an action method
+    - C) To cache the result of a database query
+    - D) To cache the result of a web service call
+    - **Answer:** A
+
+54. **Which of the following is a type of ActionResult in ASP.NET MVC?**
+    - A) ViewResult
+    - B) JsonResult
+    - C) FileResult
+    - D) All of the above
+    - **Answer:** D
+
+55. **Which method is used to call a child action method in a view?**
+    - A) Html.Action()
+    - B) Html.RenderAction()
+    - C) Html.Partial()
+    - D) Html.RenderPartial()
+    - **Answer:** A
+
+56. **How do you specify a custom error page for a 500 error in ASP.NET MVC?**
+    - A) By configuring the customErrors section in Web.config
+    - B) By using the HandleError attribute
+    - C) By using the ErrorController
+    - D) By configuring the 500 section in Global.asax
+    - **Answer:** A
+
+57. **Which method is used to return a JSON result from an action method?**
+    - A) Json()
+    - B) JsonResult()
+    - C) ReturnJson()
+    - D) ReturnJsonResult()
+    - **Answer:** A
+
+58. **What is the purpose of the ModelState property in ASP.NET MVC?**
+    - A) To store the state of the model
+    - B) To store the state of the view
+    - C) To store the state of the controller
+    - D) To store the state of the action method
+    - **Answer:** A
+
+59. **Which of the following is true about the ViewBag in ASP.NET MVC?**
+    - A) It is a strongly-typed object
+    - B) It is a dynamic object
+    - C) It is available only during the current request
+    - D) Both B and C
+    - **Answer:** D
+
+60. **Which method is used to render a partial view in ASP.NET MVC?**
+    - A) PartialView()
+    - B) View()
+    - C) RenderPartial()
+    - D) RenderView()
+    - **Answer:** A
+
+61. **Which attribute is used to specify that an action supports the PUT method?**
+    - A) [HttpPut]
+    - B) [HttpPutMethod]
+    - C) [Put]
+    - D) [PutMethod]
+    - **Answer:** A
+
+62. **What is the default action method in an ASP.NET MVC controller if none is specified?**
+    - A) Index
+    - B) Default
+    - C) Home
+    - D) Main
+    - **Answer:** A
+
+63. **Which method is used to return a file from an action method?**
+    - A) File()
+    - B) ReturnFile()
+    - C) DownloadFile()
+    - D) SendFile()
+    - **Answer:** A
+
+64. **Which method is used to send raw JSON data to the client?**
+    - A) Json()
+    - B) JsonResult()
+    - C) RawJson()
+    - D) JsonData()
+    - **Answer:** A
+
+65. **Which of the following is true about the ViewData dictionary in ASP.NET MVC?**
+    - A) It is strongly-typed
+    - B) It is dynamic
+    - C) It can store data as key-value pairs
+    - D) It is available only during the current request
+    - **Answer:** C
+
+66. **What is the purpose of the ModelState property in ASP.NET MVC?**
+    - A) To store the state of the model
+    - B) To store the state of the view
+    - C) To store the state of the controller
+    - D) To store the state of the action method
+    - **Answer:** A
+
+67. **Which method is used to render a view in ASP.NET MVC?**
+    - A) Render()
+    - B) RenderView()
+    - C) View()
+    - D) RenderPartial()
+    - **Answer:** C
+
+68. **Which method is used to call a child action method in a view?**
+    - A) Html.Action()
+    - B) Html.RenderAction()
+    - C) Html.Partial()
+    - D) Html.RenderPartial()
+    - **Answer:** A
+
+69. **Which attribute is used to validate anti-forgery tokens?**
+    - A) [ValidateAntiForgeryToken]
+    - B) [AntiForgeryToken]
+    - C) [ValidateToken]
+    - D)
+
+ [AntiForgery]
+    - **Answer:** A
+
+70. **What is the purpose of the ActionResult class in ASP.NET MVC?**
+    - A) To represent the result of an action method
+    - B) To store the result of a database query
+    - C) To store the result of a web service call
+    - D) To represent the result of a form submission
+    - **Answer:** A
+
+71. **Which method is used to return a view from an action method?**
+    - A) ReturnView()
+    - B) Return()
+    - C) View()
+    - D) RenderView()
+    - **Answer:** C
+
+72. **What is the default view engine in ASP.NET MVC?**
+    - A) WebForms
+    - B) Razor
+    - C) Spark
+    - D) NHaml
+    - **Answer:** B
+
+73. **Which method is used to call the action method directly from another controller?**
+    - A) RedirectToAction
+    - B) Redirect
+    - C) CallAction
+    - D) InvokeAction
+    - **Answer:** A
+
+74. **How do you handle exceptions in an ASP.NET MVC application?**
+    - A) Using try-catch blocks
+    - B) Using the HandleError attribute
+    - C) Both A and B
+    - D) None of the above
+    - **Answer:** C
+
+75. **Which lifecycle method is called when an action is executed?**
+    - A) OnActionExecuting
+    - B) OnActionExecuted
+    - C) ExecuteResult
+    - D) ExecuteAction
+    - **Answer:** B
+
+76. **Which method is used to add custom routes in ASP.NET MVC?**
+    - A) RouteConfig.RegisterRoutes
+    - B) RouteTable.Routes.MapRoute
+    - C) RouteConfig.Routes.MapRoute
+    - D) RouteTable.RegisterRoutes
+    - **Answer:** B
+
+77. **What is the purpose of the RouteConfig class in ASP.NET MVC?**
+    - A) To configure routes for the application
+    - B) To configure filters for the application
+    - C) To configure view engines for the application
+    - D) To configure controllers for the application
+    - **Answer:** A
+
+78. **Which of the following helpers can be used to generate a form element in a Razor view?**
+    - A) Html.Form()
+    - B) Html.BeginForm()
+    - C) Html.StartForm()
+    - D) Html.CreateForm()
+    - **Answer:** B
+
+79. **Which method is used to redirect to a different action method?**
+    - A) RedirectToAction()
+    - B) RedirectToMethod()
+    - C) RedirectToRoute()
+    - D) RedirectToView()
+    - **Answer:** A
+
+80. **Which attribute is used to restrict access to actions to only authenticated users?**
+    - A) Authorize
+    - B) AllowAnonymous
+    - C) ValidateAntiForgeryToken
+    - D) OutputCache
+    - **Answer:** A
+
+81. **Which filter is used to handle exceptions in ASP.NET MVC?**
+    - A) HandleError
+    - B) ExceptionHandler
+    - C) ErrorHandler
+    - D) ExceptionFilter
+    - **Answer:** A
+
+82. **Which of the following is a return type of a controller action in ASP.NET MVC?**
+    - A) ActionResult
+    - B) ViewResult
+    - C) JsonResult
+    - D) All of the above
+    - **Answer:** D
+
+83. **Which namespace is used for ASP.NET MVC?**
+    - A) System.Web.Mvc
+    - B) System.Mvc
+    - C) System.Web.UI
+    - D) System.Web.Routing
+    - **Answer:** A
+
+84. **Which method is used to return JSON data in ASP.NET MVC?**
+    - A) Return Json()
+    - B) JsonResult()
+    - C) Json()
+    - D) Return JsonResult()
+    - **Answer:** C
+
+85. **What is the default HTTP method for an action method in ASP.NET MVC?**
+    - A) GET
+    - B) POST
+    - C) PUT
+    - D) DELETE
+    - **Answer:** A
+
+86. **Which method is used to return a JSON result from an action method?**
+    - A) Json()
+    - B) JsonResult()
+    - C) ReturnJson()
+    - D) ReturnJsonResult()
+    - **Answer:** A
+
+87. **What is the purpose of the ModelState property in ASP.NET MVC?**
+    - A) To store the state of the model
+    - B) To store the state of the view
+    - C) To store the state of the controller
+    - D) To store the state of the action method
+    - **Answer:** A
+
+88. **Which method is used to render a view in ASP.NET MVC?**
+    - A) Render()
+    - B) RenderView()
+    - C) View()
+    - D) RenderPartial()
+    - **Answer:** C
+
+89. **Which method is used to call a child action method in a view?**
+    - A) Html.Action()
+    - B) Html.RenderAction()
+    - C) Html.Partial()
+    - D) Html.RenderPartial()
+    - **Answer:** A
+
+90. **Which attribute is used to validate anti-forgery tokens?**
+    - A) [ValidateAntiForgeryToken]
+    - B) [AntiForgeryToken]
+    - C) [ValidateToken]
+    - D) [AntiForgery]
+    - **Answer:** A
+
+91. **What is the purpose of the ActionResult class in ASP.NET MVC?**
+    - A) To represent the result of an action method
+    - B) To store the result of a database query
+    - C) To store the result of a web service call
+    - D) To represent the result of a form submission
+    - **Answer:** A
+
+92. **Which method is used to return a view from an action method?**
+    - A) ReturnView()
+    - B) Return()
+    - C) View()
+    - D) RenderView()
+    - **Answer:** C
+
+93. **What is the default view engine in ASP.NET MVC?**
+    - A) WebForms
+    - B) Razor
+    - C) Spark
+    - D) NHaml
+    - **Answer:** B
+
+94. **Which method is used to call the action method directly from another controller?**
+    - A) RedirectToAction
+    - B) Redirect
+    - C) CallAction
+    - D) InvokeAction
+    - **Answer:** A
+
+95. **How do you handle exceptions in an ASP.NET MVC application?**
+    - A) Using try-catch blocks
+    - B) Using the HandleError attribute
+    - C) Both A and B
+    - D) None of the above
+    - **Answer:** C
+
+96. **Which lifecycle method is called when an action is executed?**
+    - A) OnActionExecuting
+    - B) OnActionExecuted
+    - C) ExecuteResult
+    - D) ExecuteAction
+    - **Answer:** B
+
+97. **Which method is used to add custom routes in ASP.NET MVC?**
+    - A) RouteConfig.RegisterRoutes
+    - B) RouteTable.Routes.MapRoute
+    - C) RouteConfig.Routes.MapRoute
+    - D) RouteTable.RegisterRoutes
+    - **Answer:** B
+
+98. **What is the purpose of the RouteConfig class in ASP.NET MVC?**
+    - A) To configure routes for the application
+    - B) To configure filters for the application
+    - C) To configure view engines for the application
+    - D) To configure controllers for the application
+    - **Answer:** A
+
+99. **Which of the following helpers can be used to generate a form element in a Razor view?**
+    - A) Html.Form()
+    - B) Html.BeginForm()
+    - C) Html.StartForm()
+    - D) Html.CreateForm()
+    - **Answer:** B
+
+100. **Which method is used to redirect to a different action method?**
+    - A) RedirectToAction()
+    - B) RedirectToMethod()
+    - C) RedirectToRoute()
+    - D) RedirectToView()
+    - **Answer:** A
+
+These questions cover a range of topics within ASP.NET MVC, providing a comprehensive overview for study or review.

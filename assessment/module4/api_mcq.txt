@@ -1,0 +1,709 @@
+100 multiple-choice questions (MCQs) with answers on ASP.NET Web API:
+
+### MCQs on ASP.NET Web API
+
+1. **What does ASP.NET Web API stand for?**
+   - A) Application Service Provider .NET Web API
+   - B) Active Server Pages .NET Web API
+   - C) Asynchronous Service Pages .NET Web API
+   - D) Active Script Pages .NET Web API
+   - **Answer: B**
+
+2. **Which of the following is used to build HTTP services in ASP.NET Web API?**
+   - A) WebForms
+   - B) MVC
+   - C) Web API
+   - D) WCF
+   - **Answer: C**
+
+3. **ASP.NET Web API is used for?**
+   - A) Creating RESTful services
+   - B) Creating WCF services
+   - C) Creating SOAP services
+   - D) Creating Silverlight applications
+   - **Answer: A**
+
+4. **Which HTTP method is used to retrieve data from a server in Web API?**
+   - A) POST
+   - B) GET
+   - C) PUT
+   - D) DELETE
+   - **Answer: B**
+
+5. **Which attribute is used to specify the HTTP method in Web API?**
+   - A) HttpPost
+   - B) HttpGet
+   - C) HttpPut
+   - D) All of the above
+   - **Answer: D**
+
+6. **What is the default HTTP method if no attribute is specified in Web API?**
+   - A) POST
+   - B) GET
+   - C) PUT
+   - D) DELETE
+   - **Answer: B**
+
+7. **Which class is the base class for Web API controllers?**
+   - A) ApiController
+   - B) Controller
+   - C) WebController
+   - D) HttpController
+   - **Answer: A**
+
+8. **How do you specify a custom route in Web API?**
+   - A) Using RouteConfig
+   - B) Using Route attribute
+   - C) Using RoutePrefix attribute
+   - D) Using both B and C
+   - **Answer: D**
+
+9. **Which method is used to send a response back to the client in Web API?**
+   - A) Response
+   - B) HttpResponse
+   - C) IHttpActionResult
+   - D) ActionResult
+   - **Answer: C**
+
+10. **What is the purpose of the [FromBody] attribute in Web API?**
+    - A) To bind data from query string
+    - B) To bind data from route data
+    - C) To bind data from the request body
+    - D) To bind data from the request header
+    - **Answer: C**
+
+11. **Which of the following is a correct way to define a route in Web API?**
+    - A) routes.MapRoute()
+    - B) config.MapHttpRoute()
+    - C) config.Routes.MapRoute()
+    - D) routes.MapHttpRoute()
+    - **Answer: B**
+
+12. **What is MediaTypeFormatter in Web API?**
+    - A) It handles routing in Web API
+    - B) It serializes and deserializes HTTP content
+    - C) It handles HTTP method mappings
+    - D) It performs model binding
+    - **Answer: B**
+
+13. **Which method in Web API is used for partial updates?**
+    - A) PUT
+    - B) PATCH
+    - C) POST
+    - D) GET
+    - **Answer: B**
+
+14. **Which status code represents a successful creation of a resource in Web API?**
+    - A) 200
+    - B) 201
+    - C) 204
+    - D) 400
+    - **Answer: B**
+
+15. **Which status code indicates a conflict in Web API?**
+    - A) 404
+    - B) 409
+    - C) 500
+    - D) 502
+    - **Answer: B**
+
+16. **What is the purpose of the IHttpActionResult interface in Web API?**
+    - A) To define a set of action methods
+    - B) To provide a way to create HTTP responses
+    - C) To manage model binding
+    - D) To configure routing
+    - **Answer: B**
+
+17. **Which attribute is used to enforce HTTPS in Web API?**
+    - A) Authorize
+    - B) RequireHttps
+    - C) ValidateHttps
+    - D) SecureConnection
+    - **Answer: B**
+
+18. **How do you handle exceptions globally in Web API?**
+    - A) Using try-catch in each action
+    - B) Using ExceptionFilterAttribute
+    - C) Using Application_Error
+    - D) Using WebApiConfig
+    - **Answer: B**
+
+19. **Which feature of Web API supports Dependency Injection?**
+    - A) Controller Factories
+    - B) Message Handlers
+    - C) Filters
+    - D) All of the above
+    - **Answer: D**
+
+20. **What is the purpose of the DelegatingHandler in Web API?**
+    - A) To handle routing
+    - B) To process HTTP request and response messages
+    - C) To manage controller actions
+    - D) To handle media type formatters
+    - **Answer: B**
+
+21. **Which HTTP status code represents "Not Found"?**
+    - A) 200
+    - B) 201
+    - C) 400
+    - D) 404
+    - **Answer: D**
+
+22. **Which interface is used for HTTP message handlers in Web API?**
+    - A) HttpMessageHandler
+    - B) HttpControllerHandler
+    - C) IHttpHandler
+    - D) HttpRequestHandler
+    - **Answer: A**
+
+23. **What does the ContentNegotiation in Web API determine?**
+    - A) The format of the response data
+    - B) The type of request
+    - C) The routing mechanism
+    - D) The controller action to invoke
+    - **Answer: A**
+
+24. **Which method is used to define Web API configuration in ASP.NET Core?**
+    - A) ConfigureWebApi
+    - B) UseWebApi
+    - C) AddWebApi
+    - D) MapWebApi
+    - **Answer: B**
+
+25. **Which tool can be used to test Web API?**
+    - A) Fiddler
+    - B) Postman
+    - C) Swagger
+    - D) All of the above
+    - **Answer: D**
+
+26. **How can you handle CORS in Web API?**
+    - A) Using the EnableCors attribute
+    - B) Using web.config settings
+    - C) Using Application_Start method
+    - D) Using RouteConfig
+    - **Answer: A**
+
+27. **What does OData stand for?**
+    - A) Object Data Access
+    - B) Open Data Protocol
+    - C) Oracle Data API
+    - D) Online Data Application
+    - **Answer: B**
+
+28. **Which method is used to map an HTTP request to a controller action in Web API?**
+    - A) MapRoute
+    - B) MapHttpRoute
+    - C) MapController
+    - D) MapAction
+    - **Answer: B**
+
+29. **Which attribute is used to specify the route template in Web API?**
+    - A) RoutePrefix
+    - B) Route
+    - C) RouteTemplate
+    - D) RouteMap
+    - **Answer: B**
+
+30. **Which class represents the HTTP response message in Web API?**
+    - A) HttpRequestMessage
+    - B) HttpResponseMessage
+    - C) HttpResponse
+    - D) HttpMessage
+    - **Answer: B**
+
+31. **What is the purpose of HttpConfiguration in Web API?**
+    - A) To configure routes
+    - B) To set up dependency injection
+    - C) To configure formatters
+    - D) All of the above
+    - **Answer: D**
+
+32. **Which of the following is a valid HTTP status code for "No Content"?**
+    - A) 200
+    - B) 201
+    - C) 204
+    - D) 400
+    - **Answer: C**
+
+33. **Which method in Web API is used for creating a new resource?**
+    - A) GET
+    - B) POST
+    - C) PUT
+    - D) DELETE
+    - **Answer: B**
+
+34. **What is the purpose of the HttpActionContext class in Web API?**
+    - A) To handle HTTP requests
+    - B) To provide context for action execution
+    - C) To manage HTTP responses
+    - D) To configure dependency injection
+    - **Answer: B**
+
+35. **How do you enforce HTTPS for all actions in a Web API controller?**
+    - A) Using [RequireHttps] attribute on each action
+    - B) Using [RequireHttps] attribute on the controller
+    - C) Configuring web.config
+    - D) None of the above
+    - **Answer: B**
+
+36. **Which attribute is used to handle cross-origin requests in Web API?**
+    - A) CrossOrigin
+    - B) AllowCrossOrigin
+    - C) EnableCors
+    - D) EnableCrossOrigin
+    - **Answer: C**
+
+37.
+
+ **Which feature in Web API allows you to create HTTP-based services that can be consumed by a broad range of clients?**
+    - A) WCF
+    - B) MVC
+    - C) RESTful services
+    - D) SOAP services
+    - **Answer: C**
+
+38. **What does the [FromUri] attribute in Web API do?**
+    - A) Binds data from the request body
+    - B) Binds data from the query string or route data
+    - C) Binds data from the request header
+    - D) Binds data from the response header
+    - **Answer: B**
+
+39. **Which method in Web API is used to update an existing resource?**
+    - A) GET
+    - B) POST
+    - C) PUT
+    - D) DELETE
+    - **Answer: C**
+
+40. **Which of the following is true about Web API?**
+    - A) It only supports GET and POST methods
+    - B) It can be consumed by a wide range of clients, including browsers and mobile devices
+    - C) It does not support routing
+    - D) It is the same as WCF
+    - **Answer: B**
+
+41. **Which feature in Web API allows you to return different formats like JSON or XML?**
+    - A) Content Negotiation
+    - B) Dependency Injection
+    - C) Routing
+    - D) Message Handlers
+    - **Answer: A**
+
+42. **What is the purpose of the HttpResponseMessage class in Web API?**
+    - A) To represent an HTTP request message
+    - B) To represent an HTTP response message
+    - C) To represent an HTTP content
+    - D) To represent an HTTP route
+    - **Answer: B**
+
+43. **Which of the following is a way to secure Web API?**
+    - A) Using HTTPS
+    - B) Using OAuth
+    - C) Using API keys
+    - D) All of the above
+    - **Answer: D**
+
+44. **Which method in Web API is used to delete a resource?**
+    - A) GET
+    - B) POST
+    - C) PUT
+    - D) DELETE
+    - **Answer: D**
+
+45. **Which of the following is true about ASP.NET Web API and WCF?**
+    - A) Web API is designed for SOAP-based services
+    - B) WCF is better suited for creating RESTful services
+    - C) Web API is open-source and ideal for RESTful services
+    - D) WCF and Web API are essentially the same
+    - **Answer: C**
+
+46. **Which protocol is primarily used by Web API?**
+    - A) FTP
+    - B) HTTP
+    - C) SMTP
+    - D) TCP
+    - **Answer: B**
+
+47. **What does the ApiController class in Web API inherit from?**
+    - A) Controller
+    - B) IHttpController
+    - C) HttpController
+    - D) Object
+    - **Answer: B**
+
+48. **Which of the following methods are provided by the ApiController class in Web API?**
+    - A) Ok
+    - B) BadRequest
+    - C) NotFound
+    - D) All of the above
+    - **Answer: D**
+
+49. **How can you enable Web API routing in an ASP.NET application?**
+    - A) By configuring in the RouteConfig.cs file
+    - B) By using the WebApiConfig.Register method
+    - C) By setting routes in the Global.asax file
+    - D) All of the above
+    - **Answer: B**
+
+50. **Which attribute would you use to handle model validation in Web API?**
+    - A) ValidateModel
+    - B) ModelState
+    - C) Validate
+    - D) ValidateInput
+    - **Answer: B**
+
+51. **Which HTTP status code indicates "Unauthorized" in Web API?**
+    - A) 400
+    - B) 401
+    - C) 403
+    - D) 404
+    - **Answer: B**
+
+52. **What is the primary purpose of the [Authorize] attribute in Web API?**
+    - A) To enforce HTTPS
+    - B) To control access to the actions and controllers
+    - C) To handle exceptions
+    - D) To perform model binding
+    - **Answer: B**
+
+53. **Which of the following is not a valid return type for a Web API action?**
+    - A) IHttpActionResult
+    - B) HttpResponseMessage
+    - C) void
+    - D) Task<ActionResult>
+    - **Answer: D**
+
+54. **What is the purpose of HttpRequestMessage class in Web API?**
+    - A) To represent an HTTP request message
+    - B) To represent an HTTP response message
+    - C) To represent an HTTP content
+    - D) To represent an HTTP route
+    - **Answer: A**
+
+55. **Which of the following is a valid status code for "Accepted"?**
+    - A) 202
+    - B) 204
+    - C) 400
+    - D) 404
+    - **Answer: A**
+
+56. **How do you disable tracing in Web API?**
+    - A) By setting TraceLevel to Off in WebApiConfig
+    - B) By configuring in web.config
+    - C) By using a custom message handler
+    - D) By removing trace listeners
+    - **Answer: A**
+
+57. **Which HTTP method is used to submit data to be processed to a specified resource?**
+    - A) GET
+    - B) POST
+    - C) PUT
+    - D) DELETE
+    - **Answer: B**
+
+58. **Which of the following is not a valid media type formatter in Web API?**
+    - A) JsonMediaTypeFormatter
+    - B) XmlMediaTypeFormatter
+    - C) CsvMediaTypeFormatter
+    - D) FormUrlEncodedMediaTypeFormatter
+    - **Answer: C**
+
+59. **Which of the following can be used for caching in Web API?**
+    - A) Output caching
+    - B) CacheCow
+    - C) Redis
+    - D) All of the above
+    - **Answer: D**
+
+60. **What is the primary purpose of the ApiController class in Web API?**
+    - A) To manage database connections
+    - B) To process HTTP requests
+    - C) To perform routing
+    - D) To handle configuration settings
+    - **Answer: B**
+
+61. **Which HTTP status code represents "Internal Server Error"?**
+    - A) 500
+    - B) 501
+    - C) 502
+    - D) 503
+    - **Answer: A**
+
+62. **What is the primary purpose of HttpMessageHandler in Web API?**
+    - A) To manage controllers
+    - B) To handle HTTP request and response messages
+    - C) To configure routing
+    - D) To perform model binding
+    - **Answer: B**
+
+63. **Which attribute in Web API is used to specify the HTTP verb for an action method?**
+    - A) ActionName
+    - B) HttpMethod
+    - C) Route
+    - D) HttpPost
+    - **Answer: D**
+
+64. **Which of the following is true about content negotiation in Web API?**
+    - A) It determines the controller to handle the request
+    - B) It determines the HTTP method to handle the request
+    - C) It determines the response format (e.g., JSON, XML)
+    - D) It determines the route to handle the request
+    - **Answer: C**
+
+65. **Which HTTP status code indicates "Bad Request"?**
+    - A) 200
+    - B) 400
+    - C) 401
+    - D) 403
+    - **Answer: B**
+
+66. **Which of the following is used to serialize data in Web API?**
+    - A) Formatter
+    - B) Serializer
+    - C) Controller
+    - D) Handler
+    - **Answer: A**
+
+67. **Which class in Web API represents the HTTP request message?**
+    - A) HttpRequest
+    - B) HttpRequestMessage
+    - C) HttpResponse
+    - D) HttpMessage
+    - **Answer: B**
+
+68. **Which status code in Web API represents "Forbidden"?**
+    - A) 200
+    - B) 400
+    - C) 401
+    - D) 403
+    - **Answer: D**
+
+69. **Which of the following is a benefit of using Web API?**
+    - A) It supports creating RESTful services
+    - B) It is platform-independent
+    - C) It can be consumed by various clients
+    - D) All of the above
+    - **Answer: D**
+
+70. **Which method is used to read data from the request body in Web API?**
+    - A) ReadAsStringAsync
+    - B) ReadAsHttpContent
+    - C) ReadAsContent
+    - D) ReadAsMessage
+    - **Answer: A**
+
+71. **What is the default return format in Web API if no format is specified?**
+    - A) JSON
+    - B) XML
+    - C) Plain Text
+    - D) HTML
+    - **Answer: A**
+
+72. **Which class in Web API
+
+ represents the HTTP response message?**
+    - A) HttpResponse
+    - B) HttpResponseMessage
+    - C) HttpRequestMessage
+    - D) HttpMessage
+    - **Answer: B**
+
+73. **How do you configure Web API routes in ASP.NET Core?**
+    - A) Using WebApiConfig.Register method
+    - B) Using RouteConfig.cs file
+    - C) Using UseEndpoints in Startup.cs
+    - D) Using Global.asax file
+    - **Answer: C**
+
+74. **Which of the following is true about attribute routing in Web API?**
+    - A) It requires specifying routes in the Global.asax file
+    - B) It allows defining routes directly on controller actions
+    - C) It only works with GET requests
+    - D) It cannot be used with conventional routing
+    - **Answer: B**
+
+75. **Which method is used to add custom headers to an HTTP response in Web API?**
+    - A) AddHeader
+    - B) AppendHeader
+    - C) AddCustomHeader
+    - D) Headers.Add
+    - **Answer: D**
+
+76. **Which attribute is used for enabling CORS globally in Web API?**
+    - A) [EnableCors]
+    - B) [AllowCors]
+    - C) [UseCors]
+    - D) [ConfigureCors]
+    - **Answer: A**
+
+77. **Which HTTP status code indicates "No Content"?**
+    - A) 200
+    - B) 204
+    - C) 400
+    - D) 500
+    - **Answer: B**
+
+78. **Which of the following tools can generate client code for a Web API?**
+    - A) Swagger
+    - B) Postman
+    - C) Fiddler
+    - D) Blazor
+    - **Answer: A**
+
+79. **Which attribute is used to specify that an action method should handle HTTP DELETE requests?**
+    - A) [HttpPost]
+    - B) [HttpPut]
+    - C) [HttpDelete]
+    - D) [HttpGet]
+    - **Answer: C**
+
+80. **Which of the following is a standard media type in Web API?**
+    - A) application/json
+    - B) application/xml
+    - C) text/html
+    - D) All of the above
+    - **Answer: D**
+
+81. **Which method is used to send a status code of "204 No Content" in Web API?**
+    - A) NoContent()
+    - B) StatusCode(204)
+    - C) HttpStatusCode.NoContent
+    - D) Status(204)
+    - **Answer: A**
+
+82. **Which of the following is true about Web API in ASP.NET Core?**
+    - A) It is integrated with the MVC framework
+    - B) It uses a different controller base class than MVC
+    - C) It does not support dependency injection
+    - D) It does not support attribute routing
+    - **Answer: A**
+
+83. **Which attribute is used to bind a parameter from the route data in Web API?**
+    - A) [FromBody]
+    - B) [FromUri]
+    - C) [FromRoute]
+    - D) [FromHeader]
+    - **Answer: C**
+
+84. **Which of the following is used for model validation in Web API?**
+    - A) ModelState
+    - B) ModelValidator
+    - C) ModelBinder
+    - D) ModelError
+    - **Answer: A**
+
+85. **Which status code indicates "Created"?**
+    - A) 200
+    - B) 201
+    - C) 204
+    - D) 400
+    - **Answer: B**
+
+86. **Which of the following is a way to secure Web API using token-based authentication?**
+    - A) OAuth
+    - B) API Keys
+    - C) JWT (JSON Web Tokens)
+    - D) All of the above
+    - **Answer: D**
+
+87. **Which method in Web API is used to retrieve data from the server?**
+    - A) GET
+    - B) POST
+    - C) PUT
+    - D) DELETE
+    - **Answer: A**
+
+88. **Which of the following is a benefit of using attribute routing in Web API?**
+    - A) It provides more control over the URIs
+    - B) It simplifies the routing configuration
+    - C) It allows defining routes at the action level
+    - D) All of the above
+    - **Answer: D**
+
+89. **Which status code represents "OK" in Web API?**
+    - A) 200
+    - B) 201
+    - C) 204
+    - D) 400
+    - **Answer: A**
+
+90. **Which attribute is used to enable CORS for specific methods in Web API?**
+    - A) [EnableCors]
+    - B) [AllowCors]
+    - C) [UseCors]
+    - D) [ConfigureCors]
+    - **Answer: A**
+
+91. **What is the primary purpose of IHttpActionResult in Web API?**
+    - A) To handle exceptions
+    - B) To configure routing
+    - C) To provide a standard way to create HTTP responses
+    - D) To perform dependency injection
+    - **Answer: C**
+
+92. **Which of the following is true about exception handling in Web API?**
+    - A) It can be handled using Exception Filters
+    - B) It can be handled globally using Exception Handling middleware
+    - C) It can be handled using try-catch blocks in actions
+    - D) All of the above
+    - **Answer: D**
+
+93. **Which of the following is a valid media type formatter in Web API?**
+    - A) JsonMediaTypeFormatter
+    - B) XmlMediaTypeFormatter
+    - C) FormUrlEncodedMediaTypeFormatter
+    - D) All of the above
+    - **Answer: D**
+
+94. **Which method is used to update an existing resource in Web API?**
+    - A) GET
+    - B) POST
+    - C) PUT
+    - D) DELETE
+    - **Answer: C**
+
+95. **Which of the following is true about Web API filters?**
+    - A) They are used to handle cross-cutting concerns
+    - B) They can be applied globally, at the controller level, or at the action level
+    - C) They include action filters, authorization filters, and exception filters
+    - D) All of the above
+    - **Answer: D**
+
+96. **Which HTTP status code indicates "Moved Permanently"?**
+    - A) 301
+    - B) 302
+    - C) 400
+    - D) 404
+    - **Answer: A**
+
+97. **Which of the following is a way to enable CORS in Web API?**
+    - A) Using [EnableCors] attribute
+    - B) Configuring in WebApiConfig
+    - C) Using middleware in ASP.NET Core
+    - D) All of the above
+    - **Answer: D**
+
+98. **Which method in Web API is used to partially update a resource?**
+    - A) GET
+    - B) POST
+    - C) PATCH
+    - D) DELETE
+    - **Answer: C**
+
+99. **Which of the following is used to handle model binding in Web API?**
+    - A) ModelState
+    - B) ModelBinder
+    - C) ModelValidator
+    - D) ModelError
+    - **Answer: B**
+
+100. **Which HTTP status code indicates "Service Unavailable"?**
+    - A) 400
+    - B) 500
+    - C) 503
+    - D) 404
+    - **Answer: C**
+
+These questions and answers cover a wide range of topics related to ASP.NET Web API and can serve as a comprehensive resource for understanding and assessing knowledge of the subject.

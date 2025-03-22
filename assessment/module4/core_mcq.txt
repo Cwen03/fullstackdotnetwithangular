@@ -1,0 +1,709 @@
+### Multiple Choice Questions (MCQs) on ASP.NET Core
+
+1. **What is ASP.NET Core?**
+   - A) A server-side framework for building web applications
+   - B) A client-side framework for building mobile applications
+   - C) A database management system
+   - D) A content management system
+   - **Answer: A**
+
+2. **Which of the following is a new feature in ASP.NET Core?**
+   - A) Web Forms
+   - B) MVC
+   - C) Razor Pages
+   - D) Windows Forms
+   - **Answer: C**
+
+3. **What is the default web server for ASP.NET Core?**
+   - A) Apache
+   - B) IIS
+   - C) Nginx
+   - D) Kestrel
+   - **Answer: D**
+
+4. **Which method is used to add services to the container in ASP.NET Core?**
+   - A) Configure
+   - B) ConfigureServices
+   - C) Main
+   - D) AddServices
+   - **Answer: B**
+
+5. **Which method is used to configure the HTTP request pipeline?**
+   - A) ConfigurePipeline
+   - B) ConfigureHttp
+   - C) Configure
+   - D) ConfigureMiddleware
+   - **Answer: C**
+
+6. **Which file is used to configure the application’s routes in ASP.NET Core?**
+   - A) web.config
+   - B) appsettings.json
+   - C) Startup.cs
+   - D) Program.cs
+   - **Answer: C**
+
+7. **What is the default dependency injection (DI) container in ASP.NET Core?**
+   - A) Autofac
+   - B) Unity
+   - C) Castle Windsor
+   - D) Built-in DI container
+   - **Answer: D**
+
+8. **What is Middleware in ASP.NET Core?**
+   - A) Software that manages hardware resources
+   - B) Components that handle requests and responses
+   - C) A type of data storage
+   - D) A testing framework
+   - **Answer: B**
+
+9. **Which of the following is true about Razor Pages?**
+   - A) They replace MVC
+   - B) They simplify page-focused scenarios
+   - C) They are client-side only
+   - D) They are used only for APIs
+   - **Answer: B**
+
+10. **What does the ‘app.UseMvc()’ method do in ASP.NET Core?**
+    - A) Adds MVC to the request pipeline
+    - B) Configures routing
+    - C) Adds dependency injection
+    - D) Configures services
+    - **Answer: A**
+
+11. **Which template would you choose for creating a new web application in ASP.NET Core with Razor Pages?**
+    - A) ASP.NET Core Web Application
+    - B) ASP.NET Core API
+    - C) Blazor App
+    - D) Razor Page App
+    - **Answer: A**
+
+12. **What is the purpose of the ‘IApplicationBuilder’ interface in ASP.NET Core?**
+    - A) To build the application
+    - B) To configure the HTTP request pipeline
+    - C) To manage dependencies
+    - D) To manage database connections
+    - **Answer: B**
+
+13. **Which of the following is a correct way to inject a service into a controller in ASP.NET Core?**
+    - A) Using a static method
+    - B) Constructor injection
+    - C) Property injection
+    - D) Method injection
+    - **Answer: B**
+
+14. **What is the purpose of the ‘appsettings.json’ file in ASP.NET Core?**
+    - A) To configure routing
+    - B) To store configuration settings
+    - C) To define middleware components
+    - D) To define Razor pages
+    - **Answer: B**
+
+15. **Which of the following is NOT a lifecycle method of a Razor component?**
+    - A) OnInitialized
+    - B) OnParametersSet
+    - C) OnAfterRender
+    - D) OnComponentLoad
+    - **Answer: D**
+
+16. **Which protocol does SignalR use for real-time web functionality in ASP.NET Core?**
+    - A) HTTP
+    - B) WebSocket
+    - C) FTP
+    - D) SMTP
+    - **Answer: B**
+
+17. **What is Entity Framework Core?**
+    - A) A front-end framework
+    - B) An ORM for .NET Core
+    - C) A logging framework
+    - D) A testing framework
+    - **Answer: B**
+
+18. **What does ‘app.UseStaticFiles()’ do in ASP.NET Core?**
+    - A) Serves static files from the wwwroot folder
+    - B) Configures middleware
+    - C) Adds dependency injection
+    - D) Sets up routing
+    - **Answer: A**
+
+19. **What is the purpose of ‘ConfigureServices’ method in Startup.cs?**
+    - A) To configure middleware components
+    - B) To add services to the DI container
+    - C) To handle exceptions
+    - D) To serve static files
+    - **Answer: B**
+
+20. **Which of the following are valid return types in ASP.NET Core Web API?**
+    - A) IActionResult
+    - B) JsonResult
+    - C) ObjectResult
+    - D) All of the above
+    - **Answer: D**
+
+21. **What is the purpose of ‘app.UseRouting()’ in ASP.NET Core?**
+    - A) To define routes
+    - B) To add middleware
+    - C) To configure services
+    - D) To add static files
+    - **Answer: A**
+
+22. **Which of the following attribute is used to specify the HTTP method for an action in ASP.NET Core MVC?**
+    - A) [HttpPost]
+    - B) [HttpGet]
+    - C) [HttpPut]
+    - D) All of the above
+    - **Answer: D**
+
+23. **What is Blazor in ASP.NET Core?**
+    - A) A component model for building web UIs
+    - B) A database management system
+    - C) A testing framework
+    - D) A logging framework
+    - **Answer: A**
+
+24. **Which of the following command is used to create a new ASP.NET Core project?**
+    - A) dotnet new
+    - B) dotnet create
+    - C) dotnet build
+    - D) dotnet run
+    - **Answer: A**
+
+25. **What is the main benefit of using dependency injection in ASP.NET Core?**
+    - A) To improve performance
+    - B) To increase code readability
+    - C) To achieve loose coupling
+    - D) To reduce application size
+    - **Answer: C**
+
+26. **Which middleware component is responsible for handling exceptions in ASP.NET Core?**
+    - A) app.UseRouting()
+    - B) app.UseStaticFiles()
+    - C) app.UseExceptionHandler()
+    - D) app.UseEndpoints()
+    - **Answer: C**
+
+27. **What is the purpose of ‘IConfiguration’ in ASP.NET Core?**
+    - A) To configure middleware
+    - B) To manage application settings
+    - C) To handle HTTP requests
+    - D) To configure routing
+    - **Answer: B**
+
+28. **Which method in the ‘IHostBuilder’ interface is used to configure logging in ASP.NET Core?**
+    - A) ConfigureLogging
+    - B) AddLogging
+    - C) UseLogging
+    - D) BuildLogging
+    - **Answer: A**
+
+29. **What is the purpose of the ‘Configure’ method in Startup.cs?**
+    - A) To configure the DI container
+    - B) To configure the HTTP request pipeline
+    - C) To handle database migrations
+    - D) To serve static files
+    - **Answer: B**
+
+30. **What is the purpose of ‘services.AddControllersWithViews()’ in ASP.NET Core?**
+    - A) To add MVC services to the DI container
+    - B) To configure middleware
+    - C) To add dependency injection
+    - D) To configure routing
+    - **Answer: A**
+
+31. **Which of the following is a valid service lifetime in ASP.NET Core?**
+    - A) Singleton
+    - B) Scoped
+    - C) Transient
+    - D) All of the above
+    - **Answer: D**
+
+32. **What is the command to run an ASP.NET Core application from the command line?**
+    - A) dotnet start
+    - B) dotnet build
+    - C) dotnet run
+    - D) dotnet create
+    - **Answer: C**
+
+33. **What does ‘app.UseEndpoints()’ do in ASP.NET Core?**
+    - A) Configures endpoint routing
+    - B) Adds middleware
+    - C) Configures services
+    - D) Adds static files
+    - **Answer: A**
+
+34. **What is the purpose of ‘UseHttpsRedirection()’ in ASP.NET Core?**
+    - A) To serve static files
+    - B) To redirect HTTP requests to HTTPS
+    - C) To configure routing
+    - D) To add logging
+    - **Answer: B**
+
+35. **Which of the following is NOT a valid hosting model for Blazor?**
+    - A) Blazor WebAssembly
+    - B) Blazor Server
+    - C) Blazor
+
+ Native
+    - D) Blazor Desktop
+    - **Answer: C**
+
+36. **What is the main purpose of the ‘IWebHostBuilder’ interface in ASP.NET Core?**
+    - A) To build web hosts
+    - B) To configure middleware
+    - C) To manage services
+    - D) To handle logging
+    - **Answer: A**
+
+37. **Which of the following is true about ASP.NET Core applications?**
+    - A) They run only on Windows
+    - B) They can run on Windows, macOS, and Linux
+    - C) They require IIS
+    - D) They are not cross-platform
+    - **Answer: B**
+
+38. **What does ‘IActionResult’ represent in ASP.NET Core MVC?**
+    - A) A class for handling dependency injection
+    - B) A base class for action results
+    - C) A method for configuring routing
+    - D) A service for logging
+    - **Answer: B**
+
+39. **Which of the following middleware is used to serve default files like index.html in ASP.NET Core?**
+    - A) app.UseStaticFiles()
+    - B) app.UseDefaultFiles()
+    - C) app.UseRouting()
+    - D) app.UseEndpoints()
+    - **Answer: B**
+
+40. **What is the purpose of ‘services.AddDbContext<TContext>()’ in ASP.NET Core?**
+    - A) To add logging
+    - B) To add MVC services
+    - C) To configure Entity Framework Core
+    - D) To configure middleware
+    - **Answer: C**
+
+41. **Which of the following is used to create a configuration builder in ASP.NET Core?**
+    - A) ConfigurationBuilder
+    - B) ConfigBuilder
+    - C) SettingsBuilder
+    - D) AppConfigBuilder
+    - **Answer: A**
+
+42. **What is the purpose of ‘app.UseCookiePolicy()’ in ASP.NET Core?**
+    - A) To serve static files
+    - B) To configure cookie settings
+    - C) To add logging
+    - D) To configure routing
+    - **Answer: B**
+
+43. **What is the main purpose of the ‘Program.cs’ file in an ASP.NET Core application?**
+    - A) To configure middleware
+    - B) To handle exceptions
+    - C) To set up the application host
+    - D) To manage database connections
+    - **Answer: C**
+
+44. **Which method is used to configure exception handling in ASP.NET Core?**
+    - A) app.UseExceptionHandler()
+    - B) app.UseRouting()
+    - C) app.UseStaticFiles()
+    - D) app.UseEndpoints()
+    - **Answer: A**
+
+45. **What is the purpose of ‘services.AddHttpClient()’ in ASP.NET Core?**
+    - A) To configure middleware
+    - B) To add HttpClient services to the DI container
+    - C) To manage database connections
+    - D) To add logging
+    - **Answer: B**
+
+46. **Which of the following is a valid method to add middleware in ASP.NET Core?**
+    - A) app.UseMiddleware<TMiddleware>()
+    - B) app.AddMiddleware<TMiddleware>()
+    - C) app.ConfigureMiddleware<TMiddleware>()
+    - D) app.SetupMiddleware<TMiddleware>()
+    - **Answer: A**
+
+47. **What is the purpose of ‘services.AddIdentity<TUser, TRole>()’ in ASP.NET Core?**
+    - A) To configure middleware
+    - B) To add Identity services to the DI container
+    - C) To add logging
+    - D) To configure routing
+    - **Answer: B**
+
+48. **What is the main purpose of SignalR in ASP.NET Core?**
+    - A) To handle logging
+    - B) To manage database connections
+    - C) To add real-time web functionality
+    - D) To configure routing
+    - **Answer: C**
+
+49. **Which of the following is used to specify a route template in ASP.NET Core MVC?**
+    - A) [Route]
+    - B) [HttpGet]
+    - C) [HttpPost]
+    - D) [HttpPut]
+    - **Answer: A**
+
+50. **What is the main benefit of using Razor Pages in ASP.NET Core?**
+    - A) Simplifies page-focused scenarios
+    - B) Adds client-side functionality
+    - C) Improves database performance
+    - D) Enhances logging capabilities
+    - **Answer: A**
+
+51. **What is the purpose of the ‘app.UseAuthorization()’ middleware in ASP.NET Core?**
+    - A) To handle authentication
+    - B) To serve static files
+    - C) To configure authorization
+    - D) To manage database connections
+    - **Answer: C**
+
+52. **Which of the following is a built-in logging provider in ASP.NET Core?**
+    - A) Console
+    - B) Debug
+    - C) EventSource
+    - D) All of the above
+    - **Answer: D**
+
+53. **What is the purpose of ‘services.AddMvc()’ in ASP.NET Core?**
+    - A) To add MVC services to the DI container
+    - B) To configure middleware
+    - C) To handle exceptions
+    - D) To add logging
+    - **Answer: A**
+
+54. **Which of the following is a valid middleware ordering in ASP.NET Core?**
+    - A) app.UseStaticFiles() before app.UseRouting()
+    - B) app.UseRouting() before app.UseEndpoints()
+    - C) app.UseAuthorization() before app.UseEndpoints()
+    - D) All of the above
+    - **Answer: D**
+
+55. **What is the main purpose of the ‘ConfigureWebHostDefaults’ method in ASP.NET Core?**
+    - A) To configure the web host with default settings
+    - B) To add MVC services
+    - C) To configure middleware
+    - D) To handle exceptions
+    - **Answer: A**
+
+56. **Which method is used to configure services in the ‘Startup.cs’ file?**
+    - A) ConfigureServices
+    - B) Configure
+    - C) Main
+    - D) AddServices
+    - **Answer: A**
+
+57. **What is the purpose of the ‘services.AddCors()’ method in ASP.NET Core?**
+    - A) To configure Cross-Origin Resource Sharing
+    - B) To add MVC services
+    - C) To handle exceptions
+    - D) To configure routing
+    - **Answer: A**
+
+58. **What is the main benefit of using dependency injection in ASP.NET Core?**
+    - A) To achieve loose coupling
+    - B) To improve performance
+    - C) To enhance logging
+    - D) To simplify routing
+    - **Answer: A**
+
+59. **Which of the following is a valid way to create a new ASP.NET Core project?**
+    - A) Visual Studio
+    - B) Visual Studio Code
+    - C) Command Line Interface (CLI)
+    - D) All of the above
+    - **Answer: D**
+
+60. **What is the purpose of the ‘IConfigurationBuilder’ interface in ASP.NET Core?**
+    - A) To build configuration settings
+    - B) To add MVC services
+    - C) To configure middleware
+    - D) To handle logging
+    - **Answer: A**
+
+61. **What is the main purpose of the ‘app.UseRouting()’ middleware in ASP.NET Core?**
+    - A) To define and configure routes
+    - B) To serve static files
+    - C) To add MVC services
+    - D) To handle logging
+    - **Answer: A**
+
+62. **Which of the following is a valid return type for an action method in ASP.NET Core MVC?**
+    - A) IActionResult
+    - B) JsonResult
+    - C) ContentResult
+    - D) All of the above
+    - **Answer: D**
+
+63. **What is the purpose of ‘services.AddSignalR()’ in ASP.NET Core?**
+    - A) To add SignalR services to the DI container
+    - B) To configure middleware
+    - C) To handle exceptions
+    - D) To add logging
+    - **Answer: A**
+
+64. **Which of the following is a valid method to configure middleware in ASP.NET Core?**
+    - A) app.UseMiddleware<TMiddleware>()
+    - B) app.AddMiddleware<TMiddleware>()
+    - C) app.ConfigureMiddleware<TMiddleware>()
+    - D) app.SetupMiddleware<TMiddleware>()
+    - **Answer: A**
+
+65. **What is the purpose of ‘app.UseEndpoints()’ in ASP.NET Core?**
+    - A) To configure endpoint routing
+    - B) To add middleware
+    - C) To configure services
+    - D) To add static files
+    - **Answer: A**
+
+66. **What is the main purpose of the ‘ConfigureLogging’ method in ASP.NET Core?**
+    - A) To configure logging providers and settings
+    - B) To add MVC services
+    - C) To handle exceptions
+    - D) To configure routing
+    - **Answer: A**
+
+67. **Which of the following is used to create a new ASP.NET Core project using the CLI?**
+    - A) dotnet new
+    - B) dotnet create
+    - C) dotnet build
+    - D) dotnet run
+    - **Answer: A**
+
+68. **What is the purpose of the ‘appsettings.De
+
+velopment.json’ file in ASP.NET Core?**
+    - A) To store development-specific configuration settings
+    - B) To add MVC services
+    - C) To configure middleware
+    - D) To handle logging
+    - **Answer: A**
+
+69. **What is the main benefit of using middleware in ASP.NET Core?**
+    - A) To handle HTTP requests and responses
+    - B) To add MVC services
+    - C) To configure dependency injection
+    - D) To improve database performance
+    - **Answer: A**
+
+70. **Which of the following is a built-in dependency injection container in ASP.NET Core?**
+    - A) Autofac
+    - B) Unity
+    - C) Castle Windsor
+    - D) Built-in DI container
+    - **Answer: D**
+
+71. **What is the purpose of ‘services.AddControllers()’ in ASP.NET Core?**
+    - A) To add controller services to the DI container
+    - B) To configure middleware
+    - C) To handle exceptions
+    - D) To add logging
+    - **Answer: A**
+
+72. **What is the main purpose of the ‘app.UseStaticFiles()’ middleware in ASP.NET Core?**
+    - A) To serve static files from the wwwroot folder
+    - B) To configure routing
+    - C) To add MVC services
+    - D) To handle logging
+    - **Answer: A**
+
+73. **What is the purpose of ‘app.UseDeveloperExceptionPage()’ in ASP.NET Core?**
+    - A) To display detailed exception information in development
+    - B) To configure routing
+    - C) To add MVC services
+    - D) To handle logging
+    - **Answer: A**
+
+74. **Which of the following is a valid method to configure services in ASP.NET Core?**
+    - A) ConfigureServices
+    - B) AddServices
+    - C) UseServices
+    - D) BuildServices
+    - **Answer: A**
+
+75. **What is the purpose of ‘app.UseAuthentication()’ middleware in ASP.NET Core?**
+    - A) To configure authentication
+    - B) To serve static files
+    - C) To configure routing
+    - D) To add logging
+    - **Answer: A**
+
+76. **Which of the following is true about ASP.NET Core?**
+    - A) It is cross-platform
+    - B) It runs only on Windows
+    - C) It is not open-source
+    - D) It requires IIS
+    - **Answer: A**
+
+77. **What is the main purpose of ‘app.UseHttpsRedirection()’ in ASP.NET Core?**
+    - A) To redirect HTTP requests to HTTPS
+    - B) To serve static files
+    - C) To configure routing
+    - D) To add logging
+    - **Answer: A**
+
+78. **What is the purpose of ‘services.AddDbContext<TContext>()’ in ASP.NET Core?**
+    - A) To configure Entity Framework Core
+    - B) To add MVC services
+    - C) To handle exceptions
+    - D) To add logging
+    - **Answer: A**
+
+79. **Which of the following is a valid way to handle exceptions in ASP.NET Core?**
+    - A) app.UseExceptionHandler()
+    - B) app.UseDeveloperExceptionPage()
+    - C) Both A and B
+    - D) None of the above
+    - **Answer: C**
+
+80. **What is the purpose of ‘services.AddHttpClient()’ in ASP.NET Core?**
+    - A) To add HttpClient services to the DI container
+    - B) To configure middleware
+    - C) To handle exceptions
+    - D) To add logging
+    - **Answer: A**
+
+81. **Which of the following is a valid return type for an action method in ASP.NET Core MVC?**
+    - A) IActionResult
+    - B) JsonResult
+    - C) ContentResult
+    - D) All of the above
+    - **Answer: D**
+
+82. **What is the main purpose of SignalR in ASP.NET Core?**
+    - A) To add real-time web functionality
+    - B) To manage database connections
+    - C) To handle logging
+    - D) To configure routing
+    - **Answer: A**
+
+83. **What is the purpose of ‘app.UseRouting()’ middleware in ASP.NET Core?**
+    - A) To define and configure routes
+    - B) To serve static files
+    - C) To add MVC services
+    - D) To handle logging
+    - **Answer: A**
+
+84. **Which of the following is used to specify a route template in ASP.NET Core MVC?**
+    - A) [Route]
+    - B) [HttpGet]
+    - C) [HttpPost]
+    - D) [HttpPut]
+    - **Answer: A**
+
+85. **What is the main benefit of using Razor Pages in ASP.NET Core?**
+    - A) Simplifies page-focused scenarios
+    - B) Adds client-side functionality
+    - C) Improves database performance
+    - D) Enhances logging capabilities
+    - **Answer: A**
+
+86. **What is the purpose of the ‘app.UseAuthorization()’ middleware in ASP.NET Core?**
+    - A) To configure authorization
+    - B) To handle authentication
+    - C) To serve static files
+    - D) To manage database connections
+    - **Answer: A**
+
+87. **Which of the following is a built-in logging provider in ASP.NET Core?**
+    - A) Console
+    - B) Debug
+    - C) EventSource
+    - D) All of the above
+    - **Answer: D**
+
+88. **What is the purpose of ‘services.AddMvc()’ in ASP.NET Core?**
+    - A) To add MVC services to the DI container
+    - B) To configure middleware
+    - C) To handle exceptions
+    - D) To add logging
+    - **Answer: A**
+
+89. **Which of the following is a valid middleware ordering in ASP.NET Core?**
+    - A) app.UseStaticFiles() before app.UseRouting()
+    - B) app.UseRouting() before app.UseEndpoints()
+    - C) app.UseAuthorization() before app.UseEndpoints()
+    - D) All of the above
+    - **Answer: D**
+
+90. **What is the main purpose of the ‘ConfigureWebHostDefaults’ method in ASP.NET Core?**
+    - A) To configure the web host with default settings
+    - B) To add MVC services
+    - C) To configure middleware
+    - D) To handle exceptions
+    - **Answer: A**
+
+91. **Which method is used to configure services in the ‘Startup.cs’ file?**
+    - A) ConfigureServices
+    - B) Configure
+    - C) Main
+    - D) AddServices
+    - **Answer: A**
+
+92. **What is the purpose of ‘services.AddCors()’ in ASP.NET Core?**
+    - A) To configure Cross-Origin Resource Sharing
+    - B) To add MVC services
+    - C) To handle exceptions
+    - D) To configure routing
+    - **Answer: A**
+
+93. **What is the main benefit of using dependency injection in ASP.NET Core?**
+    - A) To achieve loose coupling
+    - B) To improve performance
+    - C) To enhance logging
+    - D) To simplify routing
+    - **Answer: A**
+
+94. **Which of the following is a valid way to create a new ASP.NET Core project?**
+    - A) Visual Studio
+    - B) Visual Studio Code
+    - C) Command Line Interface (CLI)
+    - D) All of the above
+    - **Answer: D**
+
+95. **What is the purpose of the ‘IConfigurationBuilder’ interface in ASP.NET Core?**
+    - A) To build configuration settings
+    - B) To add MVC services
+    - C) To configure middleware
+    - D) To handle logging
+    - **Answer: A**
+
+96. **What is the main purpose of the ‘app.UseRouting()’ middleware in ASP.NET Core?**
+    - A) To define and configure routes
+    - B) To serve static files
+    - C) To add MVC services
+    - D) To handle logging
+    - **Answer: A**
+
+97. **Which of the following is a valid return type for an action method in ASP.NET Core MVC?**
+    - A) IActionResult
+    - B) JsonResult
+    - C) ContentResult
+    - D) All of the above
+    - **Answer: D**
+
+98. **What is the purpose of ‘services.AddSignalR()’ in ASP.NET Core?**
+    - A) To add SignalR services to the DI container
+    - B) To configure middleware
+    - C) To handle exceptions
+    - D) To add logging
+    - **Answer: A**
+
+99. **Which of the following is a valid method to configure middleware in ASP.NET Core?**
+    - A) app.UseMiddleware<TMiddleware>()
+    - B) app.AddMiddleware<TMiddleware>()
+    - C) app.ConfigureMiddleware<TMiddleware>()
+    - D) app.SetupMiddleware<TMiddleware>()
+    - **Answer: A**
+
+100. **What is the purpose of ‘app.UseEndpoints()’ in ASP.NET Core?**
+    - A) To configure endpoint routing
+    - B) To add middleware
+    - C) To configure services
+    - D) To add static files
+    - **
+
+Answer: A**
+
+This list provides a comprehensive set of multiple-choice questions covering various aspects of ASP.NET Core, including its features, configurations, and middleware components.

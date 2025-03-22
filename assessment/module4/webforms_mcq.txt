@@ -1,0 +1,707 @@
+### ASP.NET Web Forms: 100 Multiple Choice Questions with Answers
+
+1. **What is ASP.NET Web Forms?**
+   - a) A framework for building mobile applications
+   - b) A framework for building dynamic web applications
+   - c) A framework for building desktop applications
+   - d) None of the above
+   - **Answer: b**
+
+2. **Which of the following controls is used for a grid of data in ASP.NET Web Forms?**
+   - a) Repeater
+   - b) GridView
+   - c) DataList
+   - d) ListView
+   - **Answer: b**
+
+3. **What is the file extension for ASP.NET Web Form files?**
+   - a) .html
+   - b) .aspx
+   - c) .asp
+   - d) .php
+   - **Answer: b**
+
+4. **Which of the following is a lifecycle event in ASP.NET Web Forms?**
+   - a) Load
+   - b) Init
+   - c) PreRender
+   - d) All of the above
+   - **Answer: d**
+
+5. **In ASP.NET Web Forms, which event is fired first?**
+   - a) Load
+   - b) Init
+   - c) PreRender
+   - d) Unload
+   - **Answer: b**
+
+6. **Which control is used to display a drop-down list?**
+   - a) ListBox
+   - b) DropDownList
+   - c) RadioButtonList
+   - d) CheckBoxList
+   - **Answer: b**
+
+7. **What is the default authentication mode for ASP.NET applications?**
+   - a) Windows
+   - b) Forms
+   - c) Passport
+   - d) None
+   - **Answer: a**
+
+8. **Which directive is used to bind a user control to an ASP.NET Web Form?**
+   - a) @Page
+   - b) @Control
+   - c) @Register
+   - d) @OutputCache
+   - **Answer: c**
+
+9. **Which method is used to transfer execution to another page in ASP.NET?**
+   - a) Response.Redirect()
+   - b) Server.Transfer()
+   - c) Both a and b
+   - d) None of the above
+   - **Answer: c**
+
+10. **What does the term “PostBack” refer to in ASP.NET?**
+    - a) Posting data to a different server
+    - b) Posting data back to the same page
+    - c) Posting data to another page
+    - d) None of the above
+    - **Answer: b**
+
+11. **Which object is used to maintain state in ASP.NET Web Forms?**
+    - a) ViewState
+    - b) SessionState
+    - c) ApplicationState
+    - d) All of the above
+    - **Answer: d**
+
+12. **How can you stop a page from being cached in ASP.NET?**
+    - a) Use the CacheControl property
+    - b) Use the Response.Cache.SetNoStore() method
+    - c) Set the OutputCache directive
+    - d) None of the above
+    - **Answer: b**
+
+13. **Which of the following is not a valid state management technique in ASP.NET?**
+    - a) ViewState
+    - b) Session
+    - c) Cookie
+    - d) Database
+    - **Answer: d**
+
+14. **Which event is used to handle the completion of asynchronous tasks in ASP.NET?**
+    - a) AsyncPostBack
+    - b) AsyncCompleted
+    - c) AsyncTaskCompleted
+    - d) None of the above
+    - **Answer: b**
+
+15. **Which ASP.NET control is used to display a static text?**
+    - a) TextBox
+    - b) Label
+    - c) Literal
+    - d) Button
+    - **Answer: b**
+
+16. **What does the Page_Load event do in ASP.NET?**
+    - a) It initializes the controls on the page
+    - b) It handles the page’s load event
+    - c) It terminates the page lifecycle
+    - d) It sets the page’s load time
+    - **Answer: b**
+
+17. **Which control can be used to update parts of a web page without refreshing the whole page?**
+    - a) Timer
+    - b) ScriptManager
+    - c) UpdatePanel
+    - d) UpdateProgress
+    - **Answer: c**
+
+18. **Which of the following is used to create a master page in ASP.NET?**
+    - a) @MasterPage
+    - b) @Page
+    - c) @Master
+    - d) @Content
+    - **Answer: c**
+
+19. **Which property of the Page object refers to the HTTP request made to the server?**
+    - a) Request
+    - b) Response
+    - c) Session
+    - d) Application
+    - **Answer: a**
+
+20. **What does the Session_Start event signify in ASP.NET?**
+    - a) The beginning of an application
+    - b) The beginning of a user session
+    - c) The beginning of a page request
+    - d) None of the above
+    - **Answer: b**
+
+21. **Which of the following is not a valid ASP.NET Web Form validator control?**
+    - a) RequiredFieldValidator
+    - b) RegularExpressionValidator
+    - c) CompareValidator
+    - d) QueryStringValidator
+    - **Answer: d**
+
+22. **Which attribute is used to bind data to a control in ASP.NET?**
+    - a) DataBind
+    - b) DataSource
+    - c) Bind
+    - d) None of the above
+    - **Answer: b**
+
+23. **What is the purpose of the web.config file in ASP.NET?**
+    - a) To store the application’s database configuration
+    - b) To configure the application’s settings and behavior
+    - c) To store user credentials
+    - d) None of the above
+    - **Answer: b**
+
+24. **Which of the following methods is used to write a cookie in ASP.NET?**
+    - a) Response.SetCookie()
+    - b) Response.WriteCookie()
+    - c) Response.Cookies.Add()
+    - d) Response.Cookies.Write()
+    - **Answer: c**
+
+25. **Which property of the GridView control is used to bind it to a data source?**
+    - a) DataBind
+    - b) DataSource
+    - c) DataMember
+    - d) DataField
+    - **Answer: b**
+
+26. **In which event of the Page class, the server controls are loaded into the Page object?**
+    - a) Init
+    - b) Load
+    - c) PreRender
+    - d) Unload
+    - **Answer: b**
+
+27. **Which object is used to handle the runtime errors in an ASP.NET application?**
+    - a) Error
+    - b) Exception
+    - c) Try-Catch
+    - d) Application
+    - **Answer: d**
+
+28. **Which control is used to display data from an XML file in an ASP.NET Web Form?**
+    - a) XMLDataSource
+    - b) SiteMapDataSource
+    - c) ObjectDataSource
+    - d) SqlDataSource
+    - **Answer: a**
+
+29. **How do you apply a theme to an ASP.NET Web Form?**
+    - a) Using the @Theme directive
+    - b) Setting the Theme property in the web.config file
+    - c) Setting the Theme property in the Page directive
+    - d) All of the above
+    - **Answer: c**
+
+30. **What does the Response.Redirect() method do in ASP.NET?**
+    - a) It redirects the request to another page
+    - b) It sends a new HTTP request to the browser
+    - c) It transfers control to another page on the server
+    - d) Both a and b
+    - **Answer: d**
+
+31. **Which of the following controls is used to create a checkbox list?**
+    - a) RadioButtonList
+    - b) CheckBoxList
+    - c) DropDownList
+    - d) ListBox
+    - **Answer: b**
+
+32. **Which property of a control is used to determine if the control is valid?**
+    - a) IsValid
+    - b) Valid
+    - c) Validate
+    - d) CheckValid
+    - **Answer: a**
+
+33. **Which control is used to display a hierarchical data structure?**
+    - a) TreeView
+    - b) GridView
+    - c) DataList
+    - d) Repeater
+    - **Answer: a**
+
+34. **Which event is triggered when a button is clicked in ASP.NET?**
+    - a) Click
+    - b) OnClick
+    - c) ButtonClick
+    - d) None of the above
+    - **Answer: a**
+
+35. **Which of the following HTTP verbs is not supported by ASP.NET Web Forms?**
+    - a) GET
+    - b) POST
+    - c) DELETE
+    - d) OPTIONS
+    - **Answer: c**
+
+36. **What is the main purpose of the Master Page in ASP.NET?**
+    - a) To handle database connections
+    - b) To provide a consistent layout to the web application
+    - c) To
+
+ perform validation
+    - d) To manage user sessions
+    - **Answer: b**
+
+37. **Which attribute is used to specify the custom validator’s client-side validation function?**
+    - a) ClientValidationFunction
+    - b) ClientValidate
+    - c) CustomValidatorFunction
+    - d) ClientScript
+    - **Answer: a**
+
+38. **Which of the following is not a valid DataSource control in ASP.NET?**
+    - a) SqlDataSource
+    - b) XmlDataSource
+    - c) ListDataSource
+    - d) ObjectDataSource
+    - **Answer: c**
+
+39. **Which control in ASP.NET can be used to display both static and dynamic content?**
+    - a) Literal
+    - b) Label
+    - c) TextBox
+    - d) All of the above
+    - **Answer: b**
+
+40. **Which tag is used to define a section of a Master Page in ASP.NET?**
+    - a) @Master
+    - b) @Page
+    - c) ContentPlaceHolder
+    - d) Content
+    - **Answer: c**
+
+41. **Which control is used to upload files in ASP.NET Web Forms?**
+    - a) FileUpload
+    - b) UploadFile
+    - c) FileUploader
+    - d) None of the above
+    - **Answer: a**
+
+42. **Which method is used to remove an item from the session state in ASP.NET?**
+    - a) Session.Remove()
+    - b) Session.RemoveItem()
+    - c) Session.Clear()
+    - d) Session.Delete()
+    - **Answer: a**
+
+43. **Which control is used to display a group of radio buttons in ASP.NET?**
+    - a) CheckBoxList
+    - b) DropDownList
+    - c) RadioButtonList
+    - d) ListBox
+    - **Answer: c**
+
+44. **Which method is used to end a user session in ASP.NET?**
+    - a) Session.End()
+    - b) Session.Close()
+    - c) Session.Abandon()
+    - d) Session.Terminate()
+    - **Answer: c**
+
+45. **Which of the following validators does not have a ‘ControlToValidate’ property?**
+    - a) RangeValidator
+    - b) RequiredFieldValidator
+    - c) CompareValidator
+    - d) CustomValidator
+    - **Answer: d**
+
+46. **What is the default HTTP verb for an ASP.NET Web Form?**
+    - a) GET
+    - b) POST
+    - c) PUT
+    - d) DELETE
+    - **Answer: b**
+
+47. **Which property of the FileUpload control is used to get the uploaded file?**
+    - a) FileBytes
+    - b) PostedFile
+    - c) FileName
+    - d) InputFile
+    - **Answer: b**
+
+48. **What does the EnableViewState property do in ASP.NET?**
+    - a) Enables or disables the ViewState for a control
+    - b) Enables or disables the ViewState for a page
+    - c) Enables or disables the ViewState for an application
+    - d) Both a and b
+    - **Answer: d**
+
+49. **Which of the following is true about the IsPostBack property in ASP.NET?**
+    - a) It checks if the page is being loaded for the first time
+    - b) It checks if the page is being loaded in response to a client postback
+    - c) It checks if the page is in an error state
+    - d) None of the above
+    - **Answer: b**
+
+50. **Which control is used to create a hyperlink in ASP.NET Web Forms?**
+    - a) HyperLink
+    - b) LinkButton
+    - c) Both a and b
+    - d) None of the above
+    - **Answer: c**
+
+51. **Which property of the GridView control is used to define the columns?**
+    - a) Columns
+    - b) Fields
+    - c) GridColumns
+    - d) DataColumns
+    - **Answer: a**
+
+52. **Which method is used to perform data binding in ASP.NET?**
+    - a) BindData()
+    - b) DataBind()
+    - c) DataBinding()
+    - d) Bind()
+    - **Answer: b**
+
+53. **Which event occurs when the user navigates away from a page in ASP.NET?**
+    - a) PageLeave
+    - b) PageClose
+    - c) Unload
+    - d) Dispose
+    - **Answer: c**
+
+54. **Which of the following is not an ASP.NET Web Form control?**
+    - a) TextBox
+    - b) Label
+    - c) Table
+    - d) Span
+    - **Answer: d**
+
+55. **What is the use of the RequiredFieldValidator control?**
+    - a) To validate that the user enters a value
+    - b) To validate a range of values
+    - c) To validate a regular expression
+    - d) To compare the value of a control
+    - **Answer: a**
+
+56. **Which property is used to get or set the text displayed by a Label control?**
+    - a) Value
+    - b) Text
+    - c) Content
+    - d) Caption
+    - **Answer: b**
+
+57. **Which of the following can be used to cache parts of an ASP.NET Web Form?**
+    - a) @OutputCache
+    - b) @Cache
+    - c) @CacheControl
+    - d) @PartialCache
+    - **Answer: a**
+
+58. **Which event handler is executed when a user changes a selection in a DropDownList?**
+    - a) OnSelectedIndexChanged
+    - b) OnSelectionChange
+    - c) OnItemChanged
+    - d) OnChange
+    - **Answer: a**
+
+59. **Which method is used to add an item to the session state?**
+    - a) Session.Add()
+    - b) Session.Insert()
+    - c) Session.Put()
+    - d) Session.Store()
+    - **Answer: a**
+
+60. **Which of the following is not a valid attribute for a Button control?**
+    - a) Text
+    - b) CommandName
+    - c) CommandArgument
+    - d) Content
+    - **Answer: d**
+
+61. **What does the Response.End() method do?**
+    - a) Terminates the execution of the page
+    - b) Sends a response to the client and stops page execution
+    - c) Closes the server connection
+    - d) None of the above
+    - **Answer: b**
+
+62. **Which of the following is used to apply a consistent look and feel to an ASP.NET Web Form?**
+    - a) Themes
+    - b) Skins
+    - c) Both a and b
+    - d) Styles
+    - **Answer: c**
+
+63. **Which of the following controls is used to display a hierarchical tree of data?**
+    - a) TreeView
+    - b) Menu
+    - c) SiteMapPath
+    - d) HierarchicalDataSource
+    - **Answer: a**
+
+64. **Which property of the Page class is used to access the currently executing page?**
+    - a) Page.Current
+    - b) Page.Instance
+    - c) Page
+    - d) Current
+    - **Answer: c**
+
+65. **Which method is used to send an asynchronous request to the server in ASP.NET?**
+    - a) ServerAsync()
+    - b) PageAsync()
+    - c) AsyncRequest()
+    - d) None of the above
+    - **Answer: d**
+
+66. **Which control in ASP.NET is used to display a list of items that allows multiple selections?**
+    - a) ListBox
+    - b) DropDownList
+    - c) RadioButtonList
+    - d) CheckBoxList
+    - **Answer: a**
+
+67. **Which property of a control is used to uniquely identify it on a page?**
+    - a) Name
+    - b) ID
+    - c) Key
+    - d) Identifier
+    - **Answer: b**
+
+68. **Which method is used to save the state of the ViewState in ASP.NET?**
+    - a) SaveViewState()
+    - b) SaveState()
+    - c) SaveView()
+    - d) Save()
+    - **Answer: a**
+
+69. **What is the default mode of authentication in ASP.NET?**
+    - a) Windows
+    - b) Forms
+    - c) Passport
+    - d) None
+    - **Answer: a**
+
+70. **Which of the following properties is used to set the display mode of a Literal control?**
+    - a) DisplayMode
+    - b) Mode
+    - c) TextMode
+    - d) LiteralMode
+    - **Answer: a**
+
+71. **Which event occurs when a page is completely loaded in ASP.NET?**
+    - a) PageLoad
+    - b) LoadComplete
+    - c) PageRender
+    - d) PageUnload
+    - **Answer: b**
+
+72. **Which of the following is used to configure the HTTP pipeline for an ASP.NET application?**
+    - a) web.config
+    - b) global.asax
+    - c) machine.config
+    - d) Both a and b
+   
+
+ - **Answer: d**
+
+73. **What does the IsPostBack property check in an ASP.NET Web Form?**
+    - a) If the page is being loaded for the first time
+    - b) If the page is being loaded as a result of a postback
+    - c) If the page has errors
+    - d) None of the above
+    - **Answer: b**
+
+74. **Which of the following methods is used to remove all items from the session state?**
+    - a) Session.Clear()
+    - b) Session.RemoveAll()
+    - c) Session.DeleteAll()
+    - d) Session.Abandon()
+    - **Answer: a**
+
+75. **Which control is used to display a message box to the user in ASP.NET?**
+    - a) MessageBox
+    - b) Alert
+    - c) ScriptManager
+    - d) None of the above
+    - **Answer: d**
+
+76. **Which of the following is a security feature in ASP.NET?**
+    - a) Authentication
+    - b) Authorization
+    - c) Impersonation
+    - d) All of the above
+    - **Answer: d**
+
+77. **Which method is used to clear the contents of all the controls on a page?**
+    - a) ClearControls()
+    - b) ResetControls()
+    - c) Clear()
+    - d) None of the above
+    - **Answer: d**
+
+78. **Which of the following is true about the ViewState in ASP.NET?**
+    - a) It stores the state of the control between postbacks
+    - b) It is stored in a hidden field on the page
+    - c) It can be disabled for individual controls
+    - d) All of the above
+    - **Answer: d**
+
+79. **Which control in ASP.NET is used to display an image?**
+    - a) ImageControl
+    - b) ImageBox
+    - c) Image
+    - d) None of the above
+    - **Answer: c**
+
+80. **Which method is used to add a control dynamically to a page in ASP.NET?**
+    - a) Page.Controls.Add()
+    - b) Page.Add()
+    - c) Controls.Add()
+    - d) None of the above
+    - **Answer: a**
+
+81. **Which property of the FileUpload control is used to check if a file is selected?**
+    - a) HasFile
+    - b) FileSelected
+    - c) FileExists
+    - d) IsFile
+    - **Answer: a**
+
+82. **Which event is triggered when a user changes a value in a TextBox?**
+    - a) TextChanged
+    - b) ValueChanged
+    - c) OnTextChange
+    - d) TextChange
+    - **Answer: a**
+
+83. **Which of the following is not an event of the Page class in ASP.NET?**
+    - a) Init
+    - b) Load
+    - c) PreRender
+    - d) Begin
+    - **Answer: d**
+
+84. **Which of the following methods is used to get the client's IP address?**
+    - a) Request.UserHostAddress
+    - b) Request.ClientIP
+    - c) Request.IPAddress
+    - d) Request.UserIPAddress
+    - **Answer: a**
+
+85. **Which of the following is true about the Session object in ASP.NET?**
+    - a) It is used to store user-specific data
+    - b) It can store any type of data
+    - c) It is maintained for the duration of the user session
+    - d) All of the above
+    - **Answer: d**
+
+86. **Which of the following controls is used to display a link button?**
+    - a) HyperLink
+    - b) LinkButton
+    - c) Both a and b
+    - d) None of the above
+    - **Answer: b**
+
+87. **Which property of the GridView control is used to define the style of the header row?**
+    - a) HeaderStyle
+    - b) HeaderRowStyle
+    - c) GridHeaderStyle
+    - d) GridHeaderRowStyle
+    - **Answer: a**
+
+88. **Which of the following is used to display a dynamic content in ASP.NET?**
+    - a) Literal
+    - b) Label
+    - c) TextBox
+    - d) Both a and b
+    - **Answer: d**
+
+89. **Which method is used to end the session of a user?**
+    - a) Session.Abandon()
+    - b) Session.End()
+    - c) Session.Clear()
+    - d) Session.Close()
+    - **Answer: a**
+
+90. **Which event handler is executed when a user selects an item from a DropDownList?**
+    - a) SelectedIndexChanged
+    - b) SelectionChange
+    - c) ItemChanged
+    - d) OnChange
+    - **Answer: a**
+
+91. **Which property of the Page class is used to get the unique identifier for the current request?**
+    - a) RequestID
+    - b) Request
+    - c) RequestGUID
+    - d) UniqueID
+    - **Answer: a**
+
+92. **Which control is used to create a multi-line text input in ASP.NET?**
+    - a) TextBox
+    - b) TextArea
+    - c) MultiTextBox
+    - d) None of the above
+    - **Answer: a**
+
+93. **Which method is used to remove all keys and values from the session state?**
+    - a) Session.RemoveAll()
+    - b) Session.Clear()
+    - c) Session.Abandon()
+    - d) Session.RemoveKeys()
+    - **Answer: b**
+
+94. **Which control is used to display a menu in ASP.NET?**
+    - a) Menu
+    - b) Navigation
+    - c) SiteMapPath
+    - d) TreeView
+    - **Answer: a**
+
+95. **Which event occurs when the server control is unloaded from memory?**
+    - a) Unload
+    - b) Dispose
+    - c) Load
+    - d) PreRender
+    - **Answer: a**
+
+96. **Which property of the DropDownList control is used to get or set the selected item?**
+    - a) SelectedItem
+    - b) SelectedValue
+    - c) SelectedText
+    - d) Selection
+    - **Answer: a**
+
+97. **Which of the following controls can be used to create a calendar in ASP.NET?**
+    - a) Calendar
+    - b) DatePicker
+    - c) DateControl
+    - d) None of the above
+    - **Answer: a**
+
+98. **Which property of the FileUpload control is used to get the file name of the uploaded file?**
+    - a) FileName
+    - b) PostedFile
+    - c) UploadedFile
+    - d) None of the above
+    - **Answer: a**
+
+99. **Which method is used to save the current state of the page and all controls on the page?**
+    - a) SaveViewState()
+    - b) SavePageState()
+    - c) SaveControlState()
+    - d) SaveState()
+    - **Answer: a**
+
+100. **Which of the following controls is used to create a bulleted list?**
+    - a) BulletedList
+    - b) ListBox
+    - c) DropDownList
+    - d) Repeater
+    - **Answer: a**
+
+These questions cover a range of topics related to ASP.NET Web Forms, ensuring a comprehensive review of essential concepts and functionalities.
