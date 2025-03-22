@@ -1,0 +1,250 @@
+---
+
+# **Case Study: Learning Management System (LMS) using Angular 15**
+
+### **Domain**: Education
+
+### **Project Overview**:
+We will build a basic Learning Management System (LMS) where students can:
+- View available courses
+- Enroll in a course
+- View course details
+- Track progress
+
+---
+
+## **Key Angular Concepts Covered**:
+1. **Components** (Root, Course List, Course Detail, Enrollment Form)
+2. **Directives** (Structural & Attribute)
+3. **Data Binding** (One-way, Two-way, Event Binding)
+4. **Lifecycle Hooks** (ngOnInit, ngOnDestroy, etc.)
+5. **Pipes** (Built-in and Custom)
+
+---
+
+## **Application Structure**:
+
+```
+/lms-app
+  /src
+    /app
+      /components
+        /course-list
+        /course-detail
+        /enrollment-form
+      /directives
+        highlight.directive.ts
+      /pipes
+        course-filter.pipe.ts
+      app.component.ts
+      app.module.ts
+```
+
+---
+
+## **1. Components**
+
+### **app.component.ts (Root Component)**
+
+```typescript
+@Component({
+  selector: 'app-root',
+  template: `
+    <h1>Welcome to the LMS Portal</h1>
+    <app-course-list></app-course-list>
+  `
+})
+export class AppComponent { }
+```
+
+### **course-list.component.ts**
+
+```typescript
+@Component({
+  selector: 'app-course-list',
+  templateUrl: './course-list.component.html'
+})
+export class CourseListComponent implements OnInit {
+  courses = [
+    { id: 1, title: 'Angular Basics', category: 'Web', available: true },
+    { id: 2, title: 'TypeScript Essentials', category: 'Programming', available: false },
+    { id: 3, title: 'Data Structures', category: 'CS', available: true }
+  ];
+  
+  selectedCourse: any;
+
+  ngOnInit() {
+    console.log('CourseListComponent initialized!');
+  }
+
+  selectCourse(course: any) {
+    this.selectedCourse = course;
+  }
+}
+```
+
+### **course-list.component.html**
+
+```html
+<h2>Available Courses</h2>
+
+<input type="text" [(ngModel)]="filterText" placeholder="Search by title">
+
+<ul>
+  <li *ngFor="let course of courses | courseFilter:filterText"
+      [appHighlight]="course.available"
+      (click)="selectCourse(course)">
+    {{ course.title | uppercase }} - {{ course.category }}
+  </li>
+</ul>
+
+<app-course-detail [course]="selectedCourse" *ngIf="selectedCourse"></app-course-detail>
+```
+
+---
+
+### **course-detail.component.ts**
+
+```typescript
+@Component({
+  selector: 'app-course-detail',
+  templateUrl: './course-detail.component.html'
+})
+export class CourseDetailComponent implements OnChanges, OnDestroy {
+  @Input() course: any;
+
+  ngOnChanges() {
+    console.log('CourseDetailComponent detected input change.');
+  }
+
+  ngOnDestroy() {
+    console.log('CourseDetailComponent is being destroyed.');
+  }
+}
+```
+
+### **course-detail.component.html**
+
+```html
+<h3>Course Details</h3>
+<p><strong>Title:</strong> {{ course.title }}</p>
+<p><strong>Category:</strong> {{ course.category }}</p>
+<p><strong>Status:</strong> {{ course.available ? 'Available' : 'Not Available' }}</p>
+
+<app-enrollment-form [course]="course"></app-enrollment-form>
+```
+
+---
+
+### **enrollment-form.component.ts**
+
+```typescript
+@Component({
+  selector: 'app-enrollment-form',
+  templateUrl: './enrollment-form.component.html'
+})
+export class EnrollmentFormComponent {
+  @Input() course: any;
+  studentName = '';
+
+  enroll() {
+    alert(`${this.studentName} has enrolled in ${this.course.title}`);
+    this.studentName = '';
+  }
+}
+```
+
+### **enrollment-form.component.html**
+
+```html
+<div *ngIf="course.available">
+  <h4>Enroll in this course</h4>
+  <input type="text" [(ngModel)]="studentName" placeholder="Your Name">
+  <button (click)="enroll()">Enroll</button>
+</div>
+```
+
+---
+
+## **2. Directives**
+
+### **highlight.directive.ts** (Custom Attribute Directive)
+
+```typescript
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+  @Input('appHighlight') isAvailable: boolean = false;
+
+  constructor(private el: ElementRef) {}
+
+  ngOnInit() {
+    if (this.isAvailable) {
+      this.el.nativeElement.style.backgroundColor = '#d4edda'; // light green
+    } else {
+      this.el.nativeElement.style.backgroundColor = '#f8d7da'; // light red
+    }
+  }
+}
+```
+
+---
+
+## **3. Pipes**
+
+### **course-filter.pipe.ts** (Custom Pipe)
+
+```typescript
+@Pipe({
+  name: 'courseFilter'
+})
+export class CourseFilterPipe implements PipeTransform {
+  transform(courses: any[], searchText: string): any[] {
+    if (!searchText) return courses;
+    return courses.filter(course =>
+      course.title.toLowerCase().includes(searchText.toLowerCase())
+    );
+  }
+}
+```
+
+### Built-in Pipes used:
+- `uppercase` for course title
+- `*ngIf` structural directive
+- `*ngFor` structural directive
+
+---
+
+## **4. Data Binding**
+
+- **One-way binding**: `{{ course.title }}`
+- **Event binding**: `(click)="selectCourse(course)"`
+- **Two-way binding**: `[(ngModel)]="studentName"` and `[(ngModel)]="filterText"`
+
+---
+
+## **5. Lifecycle Hooks Used**
+
+- **ngOnInit**: Initializes data in `CourseListComponent`
+- **ngOnChanges**: Detects changes to `@Input` in `CourseDetailComponent`
+- **ngOnDestroy**: Cleanup logic or logging when `CourseDetailComponent` is destroyed
+
+---
+
+## **Result**
+
+When the app runs:
+- The user sees a list of available courses.
+- The user can search/filter courses by title.
+- Courses are highlighted in green if available, red if not (custom directive).
+- On clicking a course, detailed information is shown.
+- If available, an enrollment form appears where the user can input their name and enroll.
+
+---
+
+## **Conclusion**
+
+This case study demonstrates how Angular 15's features come together to create a modular, scalable LMS app. Concepts like components, directives, pipes, lifecycle hooks, and data binding improve the structure and maintainability of the app.
+
+---
