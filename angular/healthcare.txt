@@ -1,0 +1,320 @@
+---
+
+# 🏥 **Case Study: HealthCare Pro - Patient & Appointment Management System (Angular 15)**
+
+### **Objective:**
+Build a simple healthcare application using Angular 15 that allows:
+- Displaying a list of patients.
+- Scheduling appointments.
+- Using different Angular concepts such as Components, Directives, Data Binding, Life Cycle Hooks, and Pipes.
+
+---
+
+## **1. Application Features:**
+- Display patient list (component-based)
+- Appointment booking (forms and two-way data binding)
+- Highlight critical patients using custom directives
+- Filter and format data using pipes
+- Track component lifecycle with hooks
+
+---
+
+## **2. Folder Structure**
+
+```
+/src/app
+    /components
+        patient-list
+        appointment-form
+        header
+    /directives
+        critical-patient.directive.ts
+    /pipes
+        age.pipe.ts
+        search.pipe.ts
+    /services
+        patient.service.ts
+        appointment.service.ts
+    app.component.ts
+    app.module.ts
+```
+
+---
+
+## **3. Components**
+
+### **a) Header Component**
+
+```typescript
+// header.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-header',
+  template: `<header><h1>HealthCare Pro</h1></header>`,
+  styles: [`header { background: #1976d2; color: white; padding: 1rem; text-align: center; }`]
+})
+export class HeaderComponent {}
+```
+
+---
+
+### **b) Patient List Component**
+
+```typescript
+// patient-list.component.ts
+import { Component, OnInit } from '@angular/core';
+import { PatientService } from '../../services/patient.service';
+
+@Component({
+  selector: 'app-patient-list',
+  templateUrl: './patient-list.component.html',
+  styleUrls: ['./patient-list.component.css']
+})
+export class PatientListComponent implements OnInit {
+  patients: any[] = '';
+  searchText: string = '';
+
+  constructor(private patientService: PatientService) {}
+
+  ngOnInit() {
+    this.patients = this.patientService.getPatients();
+  }
+}
+```
+
+```html
+<!-- patient-list.component.html -->
+<input type="text" [(ngModel)]="searchText" placeholder="Search Patients..." />
+<ul>
+  <li *ngFor="let patient of patients | search:searchText" [appCriticalPatient]="patient.critical">
+    {{ patient.name }} ({{ patient.dob | age }} years old)
+  </li>
+</ul>
+```
+
+---
+
+### **c) Appointment Form Component**
+
+```typescript
+// appointment-form.component.ts
+import { Component } from '@angular/core';
+import { AppointmentService } from '../../services/appointment.service';
+
+@Component({
+  selector: 'app-appointment-form',
+  templateUrl: './appointment-form.component.html',
+  styleUrls: ['./appointment-form.component.css']
+})
+export class AppointmentFormComponent {
+  appointment = {
+    patientName: '',
+    date: ''
+  };
+
+  constructor(private appointmentService: AppointmentService) {}
+
+  bookAppointment() {
+    this.appointmentService.book(this.appointment);
+    this.appointment = { patientName: '', date: '' };
+  }
+}
+```
+
+```html
+<!-- appointment-form.component.html -->
+<form (ngSubmit)="bookAppointment()">
+  <label>Patient Name:</label>
+  <input type="text" [(ngModel)]="appointment.patientName" name="patientName" required />
+  <label>Appointment Date:</label>
+  <input type="date" [(ngModel)]="appointment.date" name="date" required />
+  <button type="submit">Book Appointment</button>
+</form>
+```
+
+---
+
+## **4. Directives**
+
+### **Custom Directive: Highlight Critical Patients**
+
+```typescript
+// critical-patient.directive.ts
+import { Directive, ElementRef, Input, OnChanges } from '@angular/core';
+
+@Directive({
+  selector: '[appCriticalPatient]'
+})
+export class CriticalPatientDirective implements OnChanges {
+  @Input('appCriticalPatient') isCritical: boolean = false;
+
+  constructor(private el: ElementRef) {}
+
+  ngOnChanges() {
+    if (this.isCritical) {
+      this.el.nativeElement.style.color = 'red';
+      this.el.nativeElement.style.fontWeight = 'bold';
+    } else {
+      this.el.nativeElement.style.color = 'black';
+    }
+  }
+}
+```
+
+---
+
+## **5. Pipes**
+
+### **a) Age Pipe**
+
+```typescript
+// age.pipe.ts
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'age'
+})
+export class AgePipe implements PipeTransform {
+  transform(value: string): number {
+    const dob = new Date(value);
+    const diff = Date.now() - dob.getTime();
+    const age = new Date(diff);
+    return Math.abs(age.getUTCFullYear() - 1970);
+  }
+}
+```
+
+### **b) Search Pipe**
+
+```typescript
+// search.pipe.ts
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({
+  name: 'search'
+})
+export class SearchPipe implements PipeTransform {
+  transform(patients: any[], searchText: string): any[] {
+    if (!searchText) return patients;
+    return patients.filter(p => p.name.toLowerCase().includes(searchText.toLowerCase()));
+  }
+}
+```
+
+---
+
+## **6. Services**
+
+### **Patient Service**
+
+```typescript
+// patient.service.ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PatientService {
+  private patients = [
+    { name: 'John Doe', dob: '1980-04-15', critical: false },
+    { name: 'Jane Smith', dob: '1975-06-20', critical: true },
+    { name: 'Alice Johnson', dob: '1990-12-05', critical: false }
+  ];
+
+  getPatients() {
+    return this.patients;
+  }
+}
+```
+
+### **Appointment Service**
+
+```typescript
+// appointment.service.ts
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AppointmentService {
+  book(appointment: any) {
+    console.log('Appointment Booked: ', appointment);
+    alert('Appointment booked successfully!');
+  }
+}
+```
+
+---
+
+## **7. Lifecycle Hooks**
+
+In `PatientListComponent` we used `ngOnInit()` to fetch patients on component initialization.
+
+To track additional lifecycle events, you could also implement:
+
+```typescript
+ngOnDestroy() {
+  console.log('PatientListComponent destroyed');
+}
+```
+
+---
+
+## **8. Main Module**
+
+```typescript
+// app.module.ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { PatientListComponent } from './components/patient-list/patient-list.component';
+import { AppointmentFormComponent } from './components/appointment-form/appointment-form.component';
+
+import { CriticalPatientDirective } from './directives/critical-patient.directive';
+import { AgePipe } from './pipes/age.pipe';
+import { SearchPipe } from './pipes/search.pipe';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    PatientListComponent,
+    AppointmentFormComponent,
+    CriticalPatientDirective,
+    AgePipe,
+    SearchPipe
+  ],
+  imports: [BrowserModule, FormsModule],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+---
+
+## **9. App Component Template**
+
+```html
+<!-- app.component.html -->
+<app-header></app-header>
+<div style="display: flex; gap: 2rem; padding: 1rem;">
+  <app-patient-list></app-patient-list>
+  <app-appointment-form></app-appointment-form>
+</div>
+```
+
+---
+
+## ✅ **Outcome**
+
+- Patients with critical conditions are highlighted in red using a **custom directive**.
+- Patient list is filtered using a **search pipe**.
+- **Age pipe** calculates the patient's age from DOB.
+- **Two-way data binding** is used in forms.
+- **ngOnInit lifecycle hook** fetches initial patient data.
+
+---

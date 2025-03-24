@@ -1,0 +1,359 @@
+# Angular 15 Component Lab Exercises
+
+## Lab 1: Create a Basic Angular Component
+
+**Objective**: Learn how to create a simple Angular component.
+
+**Instructions**:
+1. Generate a component named `hello-world`.
+2. Display "Hello World from Angular!".
+
+**Solution**:
+```bash
+ng generate component hello-world
+```
+```html
+<!-- hello-world.component.html -->
+<h1>Hello World from Angular!</h1>
+```
+
+---
+
+## Lab 2: Component with Input Property
+
+**Objective**: Pass data to a component using @Input.
+
+**Instructions**:
+1. Generate a component named `greeting`.
+2. Pass a name as an @Input and display "Hello, {{name}}!".
+
+**Solution**:
+```bash
+ng generate component greeting
+```
+```typescript
+// greeting.component.ts
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-greeting',
+  templateUrl: './greeting.component.html'
+})
+export class GreetingComponent {
+  @Input() name: string = '';
+}
+```
+```html
+<!-- greeting.component.html -->
+<p>Hello, {{name}}!</p>
+```
+```html
+<!-- app.component.html -->
+<app-greeting [name]="'Alice'"></app-greeting>
+```
+
+---
+
+## Lab 3: Component with Output Event
+
+**Objective**: Emit an event from a child component.
+
+**Instructions**:
+1. Generate a component named `button-clicker`.
+2. Emit an event when a button is clicked and handle it in the parent.
+
+**Solution**:
+```bash
+ng generate component button-clicker
+```
+```typescript
+// button-clicker.component.ts
+import { Component, EventEmitter, Output } from '@angular/core';
+
+@Component({
+  selector: 'app-button-clicker',
+  templateUrl: './button-clicker.component.html'
+})
+export class ButtonClickerComponent {
+  @Output() clicked = new EventEmitter<string>();
+
+  handleClick() {
+    this.clicked.emit('Button was clicked!');
+  }
+}
+```
+```html
+<!-- button-clicker.component.html -->
+<button (click)="handleClick()">Click Me</button>
+```
+```html
+<!-- app.component.html -->
+<app-button-clicker (clicked)="handleEvent($event)"></app-button-clicker>
+<p>{{ message }}</p>
+```
+```typescript
+// app.component.ts
+export class AppComponent {
+  message = '';
+
+  handleEvent(data: string) {
+    this.message = data;
+  }
+}
+```
+
+---
+
+## Lab 4: Nested Components
+
+**Objective**: Create nested components.
+
+**Instructions**:
+1. Generate a parent component `dashboard` and a child component `dashboard-card`.
+2. Use `dashboard-card` inside `dashboard` multiple times.
+
+**Solution**:
+```bash
+ng generate component dashboard
+ng generate component dashboard-card
+```
+```html
+<!-- dashboard-card.component.html -->
+<div class="card">
+  <p>Dashboard Card</p>
+</div>
+```
+```html
+<!-- dashboard.component.html -->
+<h2>Dashboard</h2>
+<app-dashboard-card></app-dashboard-card>
+<app-dashboard-card></app-dashboard-card>
+<app-dashboard-card></app-dashboard-card>
+```
+
+---
+
+## Lab 5: Dynamic Component Rendering with *ngIf
+
+**Objective**: Show/hide components based on a condition.
+
+**Instructions**:
+1. Create a toggle button to show/hide the `profile` component.
+
+**Solution**:
+```bash
+ng generate component profile
+```
+```html
+<!-- profile.component.html -->
+<p>This is the profile section!</p>
+```
+```html
+<!-- app.component.html -->
+<button (click)="show = !show">{{ show ? 'Hide' : 'Show' }} Profile</button>
+<app-profile *ngIf="show"></app-profile>
+```
+```typescript
+// app.component.ts
+export class AppComponent {
+  show = false;
+}
+```
+
+---
+
+## Lab 6: Component with Two-way Binding
+
+**Objective**: Implement two-way binding with `[(ngModel)]`.
+
+**Instructions**:
+1. Create a component `search-box` with a text input bound to a model.
+
+**Solution**:
+```bash
+ng generate component search-box
+```
+```typescript
+// app.module.ts
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    FormsModule
+  ],
+})
+export class AppModule { }
+```
+```typescript
+// search-box.component.ts
+export class SearchBoxComponent {
+  query: string = '';
+}
+```
+```html
+<!-- search-box.component.html -->
+<input [(ngModel)]="query" placeholder="Search..." />
+<p>You typed: {{ query }}</p>
+```
+
+---
+
+## Lab 7: Component Lifecycle Hooks
+
+**Objective**: Use `ngOnInit` lifecycle hook.
+
+**Instructions**:
+1. Create a component `logger` and log a message when it initializes.
+
+**Solution**:
+```bash
+ng generate component logger
+```
+```typescript
+// logger.component.ts
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-logger',
+  template: `<p>Logger loaded! Check console.</p>`
+})
+export class LoggerComponent implements OnInit {
+  ngOnInit() {
+    console.log('LoggerComponent has been initialized.');
+  }
+}
+```
+
+---
+
+## Lab 8: Component Styling with `@Component` Styles
+
+**Objective**: Add styles directly in the component.
+
+**Instructions**:
+1. Style a component `styled-card` with inline styles in the decorator.
+
+**Solution**:
+```bash
+ng generate component styled-card
+```
+```typescript
+// styled-card.component.ts
+@Component({
+  selector: 'app-styled-card',
+  template: `<div class="box">Styled Card Component</div>`,
+  styles: [`
+    .box {
+      padding: 20px;
+      background: lightblue;
+      border-radius: 8px;
+      text-align: center;
+    }
+  `]
+})
+export class StyledCardComponent {}
+```
+
+---
+
+## Lab 9: Component Communication via Service
+
+**Objective**: Share data between two components using a service.
+
+**Instructions**:
+1. Create `sender` and `receiver` components.
+2. Use a service to share data between them.
+
+**Solution**:
+```bash
+ng generate component sender
+ng generate component receiver
+ng generate service message
+```
+```typescript
+// message.service.ts
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MessageService {
+  private messageSource = new BehaviorSubject<string>('');
+  currentMessage = this.messageSource.asObservable();
+
+  changeMessage(message: string) {
+    this.messageSource.next(message);
+  }
+}
+```
+```typescript
+// sender.component.ts
+import { MessageService } from '../message.service';
+
+export class SenderComponent {
+  constructor(private messageService: MessageService) {}
+
+  sendMessage() {
+    this.messageService.changeMessage('Hello from Sender!');
+  }
+}
+```
+```html
+<!-- sender.component.html -->
+<button (click)="sendMessage()">Send Message</button>
+```
+```typescript
+// receiver.component.ts
+import { MessageService } from '../message.service';
+
+export class ReceiverComponent {
+  message = '';
+
+  constructor(private messageService: MessageService) {
+    this.messageService.currentMessage.subscribe(msg => this.message = msg);
+  }
+}
+```
+```html
+<!-- receiver.component.html -->
+<p>Received: {{ message }}</p>
+```
+
+---
+
+## Lab 10: Dynamic Component Loader with ViewContainerRef
+
+**Objective**: Dynamically load a component at runtime.
+
+**Instructions**:
+1. Dynamically load the `hello-world` component inside another component using `ViewContainerRef`.
+
+**Solution**:
+```typescript
+// app.component.ts
+import { Component, ViewChild, ViewContainerRef, ComponentRef } from '@angular/core';
+import { HelloWorldComponent } from './hello-world/hello-world.component';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  @ViewChild('container', { read: ViewContainerRef }) container!: ViewContainerRef;
+  componentRef!: ComponentRef<HelloWorldComponent>;
+
+  loadComponent() {
+    this.container.clear();
+    this.componentRef = this.container.createComponent(HelloWorldComponent);
+  }
+}
+```
+```html
+<!-- app.component.html -->
+<button (click)="loadComponent()">Load HelloWorld Component</button>
+<ng-template #container></ng-template>
+```
+

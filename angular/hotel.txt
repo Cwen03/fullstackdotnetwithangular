@@ -1,0 +1,238 @@
+---
+
+# 📚 **Case Study: Hotel Management System using Angular 15**
+
+## **Project Overview**
+
+We are building a **Hotel Management System** using Angular 15 to manage hotel room bookings, customer details, and available services.
+
+---
+
+## **1. Components**
+
+### a) **AppComponent** (Root Component)
+
+Acts as the entry point of the application and hosts other components.
+
+```typescript
+// app.component.ts
+@Component({
+  selector: 'app-root',
+  template: `
+    <h1>Welcome to Paradise Hotel</h1>
+    <app-room-list></app-room-list>
+    <app-booking-form></app-booking-form>
+  `,
+})
+export class AppComponent {}
+```
+
+---
+
+### b) **RoomListComponent** (Parent Component)
+
+Displays the list of available rooms.
+
+```typescript
+// room-list.component.ts
+@Component({
+  selector: 'app-room-list',
+  template: `
+    <h2>Available Rooms</h2>
+    <div *ngFor="let room of rooms" (click)="selectRoom(room)">
+      <p>{{ room.name }} - {{ room.price | currency }}</p>
+    </div>
+    <app-room-detail [room]="selectedRoom"></app-room-detail>
+  `
+})
+export class RoomListComponent {
+  rooms = [
+    { id: 1, name: 'Deluxe Suite', price: 200 },
+    { id: 2, name: 'Executive Room', price: 150 }
+  ];
+  selectedRoom: any;
+
+  selectRoom(room: any) {
+    this.selectedRoom = room;
+  }
+}
+```
+
+---
+
+### c) **RoomDetailComponent** (Child Component)
+
+Displays details of the selected room.
+
+```typescript
+// room-detail.component.ts
+@Component({
+  selector: 'app-room-detail',
+  template: `
+    <div *ngIf="room">
+      <h3>Details for {{ room.name }}</h3>
+      <p>Price: {{ room.price | currency }}</p>
+    </div>
+  `,
+})
+export class RoomDetailComponent {
+  @Input() room: any;
+}
+```
+
+---
+
+### d) **BookingFormComponent** (Shared Component)
+
+Handles new booking creation with two-way data binding.
+
+```typescript
+// booking-form.component.ts
+@Component({
+  selector: 'app-booking-form',
+  template: `
+    <h2>Book a Room</h2>
+    <form (ngSubmit)="submitBooking()">
+      <label>Customer Name:
+        <input [(ngModel)]="customerName" name="customerName" required>
+      </label>
+      <label>Room Type:
+        <select [(ngModel)]="roomType" name="roomType">
+          <option *ngFor="let room of roomTypes" [value]="room">{{ room }}</option>
+        </select>
+      </label>
+      <button type="submit">Book</button>
+    </form>
+    <p *ngIf="confirmationMessage">{{ confirmationMessage }}</p>
+  `
+})
+export class BookingFormComponent {
+  customerName = '';
+  roomType = '';
+  confirmationMessage = '';
+  roomTypes = ['Deluxe Suite', 'Executive Room'];
+
+  submitBooking() {
+    this.confirmationMessage = `Booking confirmed for ${this.customerName} in ${this.roomType}`;
+  }
+}
+```
+
+---
+
+## **2. Directives**
+
+### **Structural Directive**
+
+Used `*ngFor` and `*ngIf` above in `RoomListComponent` and `RoomDetailComponent`.
+
+### **Custom Attribute Directive**
+
+Highlight the selected room.
+
+```typescript
+// highlight.directive.ts
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+  @HostListener('mouseenter') onMouseEnter() {
+    this.el.nativeElement.style.backgroundColor = 'lightblue';
+  }
+  @HostListener('mouseleave') onMouseLeave() {
+    this.el.nativeElement.style.backgroundColor = '';
+  }
+  constructor(private el: ElementRef) {}
+}
+```
+
+Usage in `RoomListComponent`:
+
+```html
+<div *ngFor="let room of rooms" (click)="selectRoom(room)" appHighlight>
+```
+
+---
+
+## **3. Data Binding**
+
+We are using:
+
+- **Interpolation**: `{{ room.name }}`
+- **Property Binding**: `[value]="room"`
+- **Event Binding**: `(click)="selectRoom(room)"`
+- **Two-way Binding**: `[(ngModel)]="customerName"`
+
+---
+
+## **4. Lifecycle Hooks**
+
+Using `ngOnInit` and `ngOnChanges` in `RoomDetailComponent`:
+
+```typescript
+export class RoomDetailComponent implements OnInit, OnChanges {
+  @Input() room: any;
+
+  ngOnInit() {
+    console.log('RoomDetailComponent Initialized');
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('Room details changed:', changes);
+  }
+}
+```
+
+---
+
+## **5. Pipes**
+
+### **Built-in Pipe Example**
+
+- `{{ room.price | currency }}`
+- `{{ roomType | uppercase }}`
+
+### **Custom Pipe Example**
+
+Format customer name to add "Guest" prefix.
+
+```typescript
+// guest-name.pipe.ts
+@Pipe({
+  name: 'guestName'
+})
+export class GuestNamePipe implements PipeTransform {
+  transform(value: string): string {
+    return `Guest: ${value}`;
+  }
+}
+```
+
+Usage in `BookingFormComponent`:
+
+```html
+<p *ngIf="confirmationMessage">{{ customerName | guestName }}</p>
+```
+
+---
+
+## **Output**
+
+- Displays a list of rooms with clickable highlights.
+- Shows selected room details dynamically.
+- Booking form with two-way binding and a confirmation message.
+- Custom pipe adds a prefix to the customer’s name.
+
+---
+
+## **Conclusion**
+
+This hotel management system case study demonstrates the power of Angular 15's:
+
+- **Component hierarchy (Parent-Child)**
+- **Structural & Attribute directives**
+- **All major types of data binding**
+- **Key lifecycle hooks**
+- **Built-in and custom pipes**
+
+---

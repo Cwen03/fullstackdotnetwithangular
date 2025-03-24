@@ -1,0 +1,217 @@
+---
+
+### **Lab 1: Using Date Pipe**
+
+**Task:** Display today’s date in different formats using DatePipe.
+
+```html
+<!-- app.component.html -->
+<p>Short Date: {{ today | date:'shortDate' }}</p>
+<p>Full Date: {{ today | date:'fullDate' }}</p>
+<p>Custom Format: {{ today | date:'MMM d, y, h:mm:ss a' }}</p>
+```
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  today: number = Date.now();
+}
+```
+
+---
+
+### **Lab 2: Using UpperCase and LowerCase Pipe**
+
+**Task:** Convert a string to uppercase and lowercase.
+
+```html
+<p>Original: {{ name }}</p>
+<p>Uppercase: {{ name | uppercase }}</p>
+<p>Lowercase: {{ name | lowercase }}</p>
+```
+
+```typescript
+export class AppComponent {
+  name: string = 'Angular Pipes Example';
+}
+```
+
+---
+
+### **Lab 3: Using Currency Pipe**
+
+**Task:** Format a number into different currency formats.
+
+```html
+<p>US Dollars: {{ amount | currency:'USD' }}</p>
+<p>Euros: {{ amount | currency:'EUR' }}</p>
+<p>Japanese Yen: {{ amount | currency:'JPY' }}</p>
+```
+
+```typescript
+export class AppComponent {
+  amount: number = 2500;
+}
+```
+
+---
+
+### **Lab 4: Using Percent Pipe**
+
+**Task:** Display a decimal as a percentage.
+
+```html
+<p>Decimal: {{ percentValue }}</p>
+<p>Percentage: {{ percentValue | percent:'1.1-2' }}</p>
+```
+
+```typescript
+export class AppComponent {
+  percentValue: number = 0.4567;
+}
+```
+
+---
+
+### **Lab 5: Using Decimal Pipe**
+
+**Task:** Format a number with different decimal places.
+
+```html
+<p>Original: {{ value }}</p>
+<p>Formatted (1.0-2): {{ value | number:'1.0-2' }}</p>
+<p>Formatted (3.1-4): {{ value | number:'3.1-4' }}</p>
+```
+
+```typescript
+export class AppComponent {
+  value: number = 1234.56789;
+}
+```
+
+---
+
+### **Lab 6: Using Slice Pipe**
+
+**Task:** Slice a string and an array.
+
+```html
+<p>String Original: {{ message }}</p>
+<p>String Slice (0,5): {{ message | slice:0:5 }}</p>
+
+<p>Array Original: {{ items }}</p>
+<p>Array Slice (1,4): {{ items | slice:1:4 }}</p>
+```
+
+```typescript
+export class AppComponent {
+  message: string = 'Angular is Awesome';
+  items: string[] = ['Angular', 'React', 'Vue', 'Svelte', 'Next'];
+}
+```
+
+---
+
+### **Lab 7: Chaining Pipes**
+
+**Task:** Chain multiple pipes.
+
+```html
+<p>Chained Pipes: {{ message | slice:0:12 | uppercase }}</p>
+```
+
+```typescript
+export class AppComponent {
+  message: string = 'angular pipes chaining example';
+}
+```
+
+---
+
+### **Lab 8: Custom Pipe (Reverse String)**
+
+ng generate pipe reverse
+
+**Task:** Create a custom pipe to reverse a string.
+
+```typescript
+// reverse.pipe.ts
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({ name: 'reverse' })
+export class ReversePipe implements PipeTransform {
+  transform(value: string): string {
+    return value.split('').reverse().join('');
+  }
+}
+```
+
+```html
+<p>Original: {{ message }}</p>
+<p>Reversed: {{ message | reverse }}</p>
+```
+
+```typescript
+export class AppComponent {
+  message: string = 'Custom Pipe Example';
+}
+```
+
+---
+
+### **Lab 9: Custom Pipe with Parameters (Filter Array)**
+
+**Task:** Create a custom pipe to filter an array based on a search term.
+
+```typescript
+// filter.pipe.ts
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({ name: 'filter' })
+export class FilterPipe implements PipeTransform {
+  transform(items: string[], search: string): string[] {
+    if (!search) return items;
+    return items.filter(item => item.toLowerCase().includes(search.toLowerCase()));
+  }
+}
+```
+
+```html
+<input [(ngModel)]="searchTerm" placeholder="Search item" />
+<ul>
+  <li *ngFor="let item of items | filter:searchTerm">{{ item }}</li>
+</ul>
+```
+
+```typescript
+export class AppComponent {
+  items: string[] = ['Angular', 'React', 'Vue', 'Svelte', 'Next'];
+  searchTerm: string = '';
+}
+```
+
+---
+
+### **Lab 10: Async Pipe**
+
+**Task:** Use async pipe to display data from an observable.
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+import { of, delay } from 'rxjs';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  data$ = of('Async Pipe Example').pipe(delay(2000));
+}
+```
+
+```html
+<p>Data: {{ data$ | async }}</p>
+```
+
+---

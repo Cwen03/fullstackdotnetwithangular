@@ -1,0 +1,846 @@
+### **1. RXJS Introduction**
+RxJS (Reactive Extensions for JavaScript) is a library for reactive programming using Observables to make it easier to compose asynchronous or callback-based code. It's heavily used in Angular, especially for handling HTTP requests, user events, and asynchronous data streams.
+
+---
+
+### **2. Observables, Observers, and Subjects**
+
+- **Observable:** Represents a stream of data that can be observed over time.
+- **Observer:** Defines callbacks to handle next (data), error, and complete notifications from an Observable.
+- **Subject:** A special type of Observable that allows multicasting to multiple observers. It acts as both an Observable and an Observer.
+
+---
+
+### **3. Consuming Web Services using HttpClientModule**
+
+- The `HttpClientModule` allows Angular to communicate with REST APIs using HTTP methods such as GET, POST, PUT, DELETE, etc. It returns Observables that you can subscribe to.
+
+---
+
+### **4. Passing Parameters using HTTP Headers**
+
+- You can pass parameters or custom headers in your HTTP requests using `HttpHeaders`.
+
+---
+
+### **5. Error Handling in RXJS**
+
+- RxJS provides operators like `catchError`, `retry`, and `retryWhen` to handle errors gracefully during observable streams.
+
+---
+
+---
+
+### 💡 **10 Lab Exercises with Solutions**
+
+---
+
+### **Lab 1: Basic Observable Creation**
+
+**Task:** Create a simple observable that emits three values and completes.
+
+```typescript
+import { Observable } from 'rxjs';
+
+const simpleObservable = new Observable(observer => {
+  observer.next('First value');
+  observer.next('Second value');
+  observer.next('Third value');
+  observer.complete();
+});
+
+simpleObservable.subscribe({
+  next: value => console.log(value),
+  complete: () => console.log('Observable completed')
+});
+```
+
+---
+
+### **Lab 2: Observer Implementation**
+
+**Task:** Implement a custom observer to handle observable values, errors, and completion.
+
+```typescript
+const observer = {
+  next: (value: any) => console.log('Observer got: ' + value),
+  error: (err: any) => console.error('Observer error: ' + err),
+  complete: () => console.log('Observer complete')
+};
+
+const observable = new Observable(subscriber => {
+  subscriber.next('Data 1');
+  subscriber.next('Data 2');
+  subscriber.error('Something went wrong');
+  subscriber.complete();
+});
+
+observable.subscribe(observer);
+```
+
+---
+
+### **Lab 3: Using Subject for Multicasting**
+
+**Task:** Use a `Subject` to multicast data to multiple observers.
+
+```typescript
+import { Subject } from 'rxjs';
+
+const subject = new Subject<number>();
+
+subject.subscribe(val => console.log('Subscriber A: ' + val));
+subject.subscribe(val => console.log('Subscriber B: ' + val));
+
+subject.next(1);
+subject.next(2);
+subject.complete();
+```
+
+---
+
+### **Lab 4: Consuming a REST API with GET**
+
+**Task:** Use `HttpClientModule` to fetch data from a dummy REST API (e.g., JSONPlaceholder).
+
+```typescript
+// app.module.ts
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+  imports: [HttpClientModule],
+})
+export class AppModule { }
+
+// component.ts
+import { HttpClient } from '@angular/common/http';
+
+constructor(private http: HttpClient) {}
+
+ngOnInit() {
+  this.http.get('https://jsonplaceholder.typicode.com/posts')
+    .subscribe(data => {
+      console.log(data);
+    });
+}
+```
+
+---
+
+### **Lab 5: POST Request to API**
+
+**Task:** Send data using a POST request.
+
+```typescript
+const postData = { title: 'Angular', body: 'RxJS HTTP POST', userId: 1 };
+
+this.http.post('https://jsonplaceholder.typicode.com/posts', postData)
+  .subscribe(response => {
+    console.log('POST Response:', response);
+  });
+```
+
+---
+
+### **Lab 6: Passing Custom HTTP Headers**
+
+**Task:** Pass custom headers in an HTTP GET request.
+
+```typescript
+import { HttpHeaders } from '@angular/common/http';
+
+const headers = new HttpHeaders({
+  'Custom-Header': 'RxJSTest'
+});
+
+this.http.get('https://jsonplaceholder.typicode.com/posts', { headers })
+  .subscribe(data => {
+    console.log('GET with headers:', data);
+  });
+```
+
+---
+
+### **Lab 7: Using HttpParams to Pass Query Parameters**
+
+**Task:** Pass parameters using `HttpParams`.
+
+```typescript
+import { HttpParams } from '@angular/common/http';
+
+const params = new HttpParams()
+  .set('userId', '1');
+
+this.http.get('https://jsonplaceholder.typicode.com/posts', { params })
+  .subscribe(data => {
+    console.log('GET with params:', data);
+  });
+```
+
+---
+
+### **Lab 8: Error Handling with catchError**
+
+**Task:** Handle HTTP errors using `catchError`.
+
+```typescript
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+
+this.http.get('https://jsonplaceholder.typicode.com/invalid-endpoint')
+  .pipe(
+    catchError(err => {
+      console.error('Error caught: ', err);
+      return of([]);
+    })
+  )
+  .subscribe(data => {
+    console.log('Data:', data);
+  });
+```
+
+---
+
+### **Lab 9: Retry Failed HTTP Request**
+
+**Task:** Retry the failed HTTP request 3 times before handling the error.
+
+```typescript
+import { retry, catchError } from 'rxjs/operators';
+
+this.http.get('https://jsonplaceholder.typicode.com/invalid-endpoint')
+  .pipe(
+    retry(3),
+    catchError(err => {
+      console.error('Failed after retries: ', err);
+      return of([]);
+    })
+  )
+  .subscribe(data => {
+    console.log('Data after retries:', data);
+  });
+```
+
+---
+
+### **Lab 10: Subject with HTTP Data Broadcasting**
+
+**Task:** Use a Subject to broadcast HTTP response data to multiple subscribers.
+
+```typescript
+import { Subject } from 'rxjs';
+
+const dataSubject = new Subject<any>();
+
+dataSubject.subscribe(data => console.log('Listener 1 received:', data));
+dataSubject.subscribe(data => console.log('Listener 2 received:', data));
+
+this.http.get('https://jsonplaceholder.typicode.com/posts/1')
+  .subscribe(data => {
+    dataSubject.next(data);
+    dataSubject.complete();
+  });
+```
+
+---
+---
+
+## 📚 **Angular 15 Routing Topics**
+
+### **1. Routing Introduction**
+Routing in Angular is the process of navigating between different views or components in a Single Page Application (SPA). Angular's Router module enables this navigation. Instead of loading different HTML pages, the Angular Router swaps views dynamically within the same page (client-side routing).
+
+Key features:
+- Enables navigation between components.
+- Supports route guards, lazy loading, and parameterized routes.
+- Uses URL paths to determine which component to display.
+
+---
+
+### **2. Route Definition Object**
+A route definition object defines how a URL path maps to a component.
+
+Basic Syntax:
+```typescript
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+];
+```
+
+Each object inside the array is a **Route Definition Object** with properties:
+- **path**: URL path.
+- **component**: Component to display when this path is matched.
+- Optional: **redirectTo**, **pathMatch**, **children**, etc.
+
+---
+
+### **3. Router Outlets**
+The `<router-outlet>` directive acts as a placeholder for the routed components. Wherever `<router-outlet>` is placed, Angular will dynamically insert the component based on the current route.
+
+Example:
+```html
+<router-outlet></router-outlet>
+```
+
+---
+
+### **4. Passing Parameters to Routes**
+You can pass values (parameters) in the route’s URL.
+
+Two types:
+- **Route Parameters (Path Params)**: `/user/:id`
+- **Query Parameters**: `/user?id=101`
+
+Retrieving Params inside component:
+```typescript
+constructor(private route: ActivatedRoute) {}
+
+ngOnInit() {
+  this.route.paramMap.subscribe(params => {
+    const id = params.get('id');
+  });
+}
+```
+
+---
+
+---
+
+## 🧪 **Lab Exercises on Angular Routing**
+
+---
+
+### **Lab 1: Create a Basic Angular App with Routing**
+
+**Objective:** Set up a new Angular app with routing enabled and configure two basic routes.
+
+✅ **Solution:**
+
+1. Create a new app:
+   ```bash
+   ng new routing-app --routing
+   cd routing-app
+   ```
+
+2. Generate components:
+   ```bash
+   ng generate component home
+   ng generate component about
+   ```
+
+3. Define routes in `app-routing.module.ts`:
+   ```typescript
+   const routes: Routes = [
+     { path: 'home', component: HomeComponent },
+     { path: 'about', component: AboutComponent },
+     { path: '', redirectTo: '/home', pathMatch: 'full' }
+   ];
+   ```
+
+4. Add `<router-outlet>` in `app.component.html`:
+   ```html
+   <nav>
+     <a routerLink="/home">Home</a> |
+     <a routerLink="/about">About</a>
+   </nav>
+   <router-outlet></router-outlet>
+   ```
+
+---
+
+### **Lab 2: Create Nested Routes**
+
+**Objective:** Add a nested route inside a `ProductComponent`.
+
+✅ **Solution:**
+
+1. Generate components:
+   ```bash
+   ng generate component product
+   ng generate component product/product-detail
+   ```
+
+2. Update routes:
+   ```typescript
+   const routes: Routes = [
+     { path: 'product', component: ProductComponent, children: [
+         { path: 'detail', component: ProductDetailComponent }
+       ]
+     }
+   ];
+   ```
+
+3. Add `<router-outlet>` inside `product.component.html`:
+   ```html
+   <h2>Product Page</h2>
+   <a routerLink="detail">Go to Product Detail</a>
+   <router-outlet></router-outlet>
+   ```
+
+---
+
+### **Lab 3: Redirect Routes**
+
+**Objective:** Redirect an empty path to `/home`.
+
+✅ **Solution:**
+
+```typescript
+{ path: '', redirectTo: '/home', pathMatch: 'full' }
+```
+
+Explanation:
+- **redirectTo**: Redirects to the `/home` path.
+- **pathMatch: 'full'**: Only redirects if the full URL path is empty.
+
+---
+
+### **Lab 4: Wildcard Route for 404**
+
+**Objective:** Create a `PageNotFoundComponent` to handle invalid routes.
+
+✅ **Solution:**
+
+1. Generate component:
+   ```bash
+   ng generate component page-not-found
+   ```
+
+2. Add wildcard route:
+   ```typescript
+   { path: '**', component: PageNotFoundComponent }
+   ```
+
+---
+
+### **Lab 5: Passing Route Parameters**
+
+**Objective:** Pass a dynamic `id` parameter to a `UserComponent`.
+
+✅ **Solution:**
+
+1. Generate component:
+   ```bash
+   ng generate component user
+   ```
+
+2. Route with parameter:
+   ```typescript
+   { path: 'user/:id', component: UserComponent }
+   ```
+
+3. In `user.component.ts`:
+   ```typescript
+   ngOnInit() {
+     this.route.paramMap.subscribe(params => {
+       this.id = params.get('id');
+     });
+   }
+   ```
+
+4. Example link:
+   ```html
+   <a routerLink="/user/42">User 42</a>
+   ```
+
+---
+
+### **Lab 6: Passing Query Parameters**
+
+**Objective:** Pass query parameters to `SearchComponent`.
+
+✅ **Solution:**
+
+1. Generate component:
+   ```bash
+   ng generate component search
+   ```
+
+2. Example link:
+   ```html
+   <a [routerLink]="['/search']" [queryParams]="{ q: 'angular' }">Search Angular</a>
+   ```
+
+3. In `search.component.ts`:
+   ```typescript
+   ngOnInit() {
+     this.route.queryParamMap.subscribe(params => {
+       this.query = params.get('q');
+     });
+   }
+   ```
+
+---
+
+### **Lab 7: Programmatic Navigation**
+
+**Objective:** Navigate to another route using `Router` service.
+
+✅ **Solution:**
+
+```typescript
+constructor(private router: Router) {}
+
+navigateToAbout() {
+  this.router.navigate(['/about']);
+}
+```
+
+In HTML:
+```html
+<button (click)="navigateToAbout()">Go to About</button>
+```
+
+---
+
+### **Lab 8: Styling Active Route Links**
+
+**Objective:** Highlight active links using `routerLinkActive`.
+
+✅ **Solution:**
+
+```html
+<nav>
+  <a routerLink="/home" routerLinkActive="active-link">Home</a>
+  <a routerLink="/about" routerLinkActive="active-link">About</a>
+</nav>
+```
+
+Add CSS:
+```css
+.active-link {
+  font-weight: bold;
+  color: red;
+}
+```
+
+---
+
+### **Lab 9: Optional Parameters**
+
+**Objective:** Pass optional parameters and read them.
+
+✅ **Solution:**
+
+```typescript
+this.router.navigate(['/user', 101], { queryParams: { role: 'admin' } });
+```
+
+In `user.component.ts`:
+```typescript
+ngOnInit() {
+  this.route.paramMap.subscribe(params => {
+    this.id = params.get('id');
+  });
+  this.route.queryParamMap.subscribe(params => {
+    this.role = params.get('role');
+  });
+}
+```
+
+---
+
+### **Lab 10: Multiple Router Outlets**
+
+**Objective:** Create a secondary outlet for a sidebar.
+
+✅ **Solution:**
+
+1. `app.component.html`:
+   ```html
+   <router-outlet></router-outlet>
+   <router-outlet name="sidebar"></router-outlet>
+   ```
+
+2. Routes:
+   ```typescript
+   { path: 'help', component: HelpComponent, outlet: 'sidebar' }
+   ```
+
+3. Navigate with outlets:
+   ```html
+   <a [routerLink]="[{ outlets: { sidebar: ['help'] } }]">Open Help Sidebar</a>
+   ```
+
+---
+
+---
+---
+
+## 📚 **Topics Explanation**
+
+### 1. **Routing in Angular**
+Routing is the mechanism in Angular that allows navigation between different views or components of an application. It manages how users move from one view to another and how URLs map to components.
+
+Key concepts:
+- `RouterModule`: Angular module responsible for providing router services.
+- `Routes`: An array of route definitions.
+- `RouterLink`: Directive to navigate between routes.
+- `RouterOutlet`: Acts as a placeholder where the routed component will be displayed.
+
+### 2. **Life Cycle of Angular Router**
+The Router goes through the following phases when a navigation is triggered:
+
+1. **Navigation Start**: Router detects the URL change.
+2. **Guards Check**: `CanActivate`, `CanDeactivate`, and `CanLoad` guards run.
+3. **Resolver Phase**: `Resolve` services run to pre-fetch route data.
+4. **Activate Routes**: Components tied to routes get activated.
+5. **Navigation End**: Navigation is complete, and components are displayed.
+
+### 3. **Guards in Angular**
+Guards are interfaces that let you control navigation. They return either `true/false` or an `Observable/Promise<boolean>`.
+
+- **CanActivate**: Controls whether a route can be activated.
+- **CanDeactivate**: Controls whether you can leave the route/component.
+- **CanLoad**: Prevents lazy-loaded modules from loading.
+- **CanActivateChild**: Controls child route activation.
+
+### 4. **Resolvers in Angular**
+Resolvers pre-fetch data before navigating to a route. It ensures data is available before component initialization.
+
+---
+
+## 🧪 **10 Lab Exercises with Solutions**
+
+---
+
+### **Lab 1: Basic Routing Setup**
+
+**Task:** Configure routing with two components: `HomeComponent` and `AboutComponent`.
+
+```typescript
+// app-routing.module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+
+**Explanation:** This sets up basic routing and uses `RouterOutlet` in `app.component.html`.
+
+---
+
+### **Lab 2: Navigation using RouterLink**
+
+**Task:** Add navigation links for the routes created in Lab 1.
+
+```html
+<!-- app.component.html -->
+<nav>
+  <a routerLink="">Home</a>
+  <a routerLink="about">About</a>
+</nav>
+<router-outlet></router-outlet>
+```
+
+**Explanation:** `routerLink` is used to navigate between components without page reloads.
+
+---
+
+### **Lab 3: Router Life Cycle Logging**
+
+**Task:** Log each phase of the router life cycle using `Router.events`.
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+import { Router, NavigationStart, NavigationEnd } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html'
+})
+export class AppComponent {
+  constructor(private router: Router) {
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        console.log('Navigation started');
+      }
+      if (event instanceof NavigationEnd) {
+        console.log('Navigation ended');
+      }
+    });
+  }
+}
+```
+
+**Explanation:** We track router events like `NavigationStart` and `NavigationEnd`.
+
+---
+
+### **Lab 4: Implementing CanActivate Guard**
+
+**Task:** Prevent the `AboutComponent` from loading unless a condition is met.
+
+```typescript
+// auth.guard.ts
+import { Injectable } from '@angular/core';
+import { CanActivate } from '@angular/router';
+
+@Injectable({ providedIn: 'root' })
+export class AuthGuard implements CanActivate {
+  canActivate(): boolean {
+    return confirm('Do you have access to About page?');
+  }
+}
+
+// app-routing.module.ts (Add guard)
+{ path: 'about', component: AboutComponent, canActivate: [AuthGuard] }
+```
+
+**Explanation:** `CanActivate` prevents unauthorized access based on logic.
+
+---
+
+### **Lab 5: Implementing CanDeactivate Guard**
+
+**Task:** Prevent navigation away from `AboutComponent` unless confirmed.
+
+```typescript
+// can-deactivate.guard.ts
+import { Injectable } from '@angular/core';
+import { CanDeactivate } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+
+@Injectable({ providedIn: 'root' })
+export class CanDeactivateGuard implements CanDeactivate<AboutComponent> {
+  canDeactivate(): boolean {
+    return confirm('Do you want to leave the About page?');
+  }
+}
+
+// app-routing.module.ts (Add guard)
+{ path: 'about', component: AboutComponent, canDeactivate: [CanDeactivateGuard] }
+```
+
+**Explanation:** This is useful to prevent data loss when leaving a form or critical page.
+
+---
+
+### **Lab 6: Implementing CanLoad Guard**
+
+**Task:** Protect a lazy-loaded module.
+
+```typescript
+// admin.guard.ts
+import { Injectable } from '@angular/core';
+import { CanLoad } from '@angular/router';
+
+@Injectable({ providedIn: 'root' })
+export class AdminGuard implements CanLoad {
+  canLoad(): boolean {
+    return confirm('Do you have permission to load Admin Module?');
+  }
+}
+
+// app-routing.module.ts
+{ path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule), canLoad: [AdminGuard] }
+```
+
+**Explanation:** Prevents modules from being lazy-loaded unless conditions pass.
+
+---
+
+### **Lab 7: Using Resolver to Fetch Data**
+
+**Task:** Use a resolver to load data before navigating to `AboutComponent`.
+
+```typescript
+// data.resolver.ts
+import { Injectable } from '@angular/core';
+import { Resolve } from '@angular/router';
+import { of } from 'rxjs';
+
+@Injectable({ providedIn: 'root' })
+export class DataResolver implements Resolve<any> {
+  resolve() {
+    return of({ message: 'Data resolved before About component loads' });
+  }
+}
+
+// app-routing.module.ts
+{ path: 'about', component: AboutComponent, resolve: { data: DataResolver } }
+```
+
+**In AboutComponent:**
+```typescript
+constructor(private route: ActivatedRoute) {
+  this.route.data.subscribe(data => console.log(data));
+}
+```
+
+**Explanation:** Ensures required data is fetched before the component loads.
+
+---
+
+### **Lab 8: Nested Routes with RouterOutlet**
+
+**Task:** Create nested routes inside `AdminModule`.
+
+```typescript
+// admin-routing.module.ts
+const routes: Routes = [
+  { path: '', component: AdminHomeComponent },
+  { path: 'settings', component: AdminSettingsComponent }
+];
+
+// admin.component.html
+<nav>
+  <a routerLink="">Home</a>
+  <a routerLink="settings">Settings</a>
+</nav>
+<router-outlet></router-outlet>
+```
+
+**Explanation:** This creates child routes inside the admin module using nested `RouterOutlet`.
+
+---
+
+### **Lab 9: CanActivateChild Guard**
+
+**Task:** Protect all child routes in `AdminModule`.
+
+```typescript
+// admin-child.guard.ts
+@Injectable({ providedIn: 'root' })
+export class AdminChildGuard implements CanActivateChild {
+  canActivateChild(): boolean {
+    return confirm('Do you want to access child routes?');
+  }
+}
+
+// admin-routing.module.ts
+{ path: '', component: AdminComponent, canActivateChild: [AdminChildGuard], children: [...] }
+```
+
+**Explanation:** Protects all child routes using `CanActivateChild`.
+
+---
+
+### **Lab 10: Redirect and Wildcard Route**
+
+**Task:** Add a redirect and a fallback route.
+
+```typescript
+// app-routing.module.ts
+{ path: '', redirectTo: '/home', pathMatch: 'full' },
+{ path: '**', component: PageNotFoundComponent }
+```
+
+**Explanation:** Redirects empty path to `/home` and handles 404 errors with a wildcard.
+
+---
+
+---

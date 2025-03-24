@@ -1,0 +1,301 @@
+---
+
+## **Lab 1: Using *ngIf Directive**
+
+### Objective:
+Show/hide a paragraph based on a button click using `*ngIf`.
+
+### Code:
+```html
+<!-- app.component.html -->
+<button (click)="toggle()">Toggle Paragraph</button>
+<p *ngIf="show">This paragraph is conditionally displayed.</p>
+```
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  show = false;
+  toggle() {
+    this.show = !this.show;
+  }
+}
+```
+
+---
+
+## **Lab 2: Using *ngFor Directive**
+
+### Objective:
+Display a list of items using `*ngFor`.
+
+### Code:
+```html
+<!-- app.component.html -->
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+```
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  items = ['Apple', 'Banana', 'Cherry'];
+}
+```
+
+---
+
+## **Lab 3: Using *ngSwitch Directive**
+
+### Objective:
+Display content based on a selected option using `*ngSwitch`.
+
+### Code:
+```html
+<!-- app.component.html -->
+<select [(ngModel)]="fruit">
+  <option value="apple">Apple</option>
+  <option value="banana">Banana</option>
+  <option value="cherry">Cherry</option>
+</select>
+
+<div [ngSwitch]="fruit">
+  <p *ngSwitchCase="'apple'">You selected Apple.</p>
+  <p *ngSwitchCase="'banana'">You selected Banana.</p>
+  <p *ngSwitchCase="'cherry'">You selected Cherry.</p>
+  <p *ngSwitchDefault>Please select a fruit.</p>
+</div>
+```
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  fruit = '';
+}
+```
+
+---
+
+## **Lab 4: Using ngClass Directive**
+
+### Objective:
+Apply classes conditionally using `ngClass`.
+
+### Code:
+```html
+<!-- app.component.html -->
+<p [ngClass]="{'highlight': isHighlighted}">This text can be highlighted.</p>
+<button (click)="isHighlighted = !isHighlighted">Toggle Highlight</button>
+```
+
+```css
+/* styles.css */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+```
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  isHighlighted = false;
+}
+```
+
+---
+
+## **Lab 5: Using ngStyle Directive**
+
+### Objective:
+Apply inline styles conditionally using `ngStyle`.
+
+### Code:
+```html
+<!-- app.component.html -->
+<p [ngStyle]="{'color': isRed ? 'red' : 'black', 'font-size.px': 18}">
+  This text changes color.
+</p>
+<button (click)="isRed = !isRed">Toggle Color</button>
+```
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  isRed = false;
+}
+```
+
+---
+
+## **Lab 6: Create a Custom Attribute Directive (TextColorDirective)**
+
+### Objective:
+Create a directive to change text color.
+
+ng generate directive text-color
+
+### Code:
+```typescript
+// text-color.directive.ts
+import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+
+@Directive({
+  selector: '[appTextColor]'
+})
+export class TextColorDirective implements OnInit {
+  @Input() appTextColor = 'blue';
+  constructor(private el: ElementRef) {}
+
+  ngOnInit() {
+    this.el.nativeElement.style.color = this.appTextColor;
+  }
+}
+```
+
+```html
+<!-- app.component.html -->
+<p appTextColor="green">This text is green.</p>
+<p appTextColor="red">This text is red.</p>
+```
+
+---
+
+## **Lab 7: Custom Directive for Hover Highlight**
+
+### Objective:
+Create a directive that highlights text on mouse hover.
+
+### Code:
+```typescript
+// hover-highlight.directive.ts
+import { Directive, ElementRef, HostListener, Renderer2 } from '@angular/core';
+
+@Directive({
+  selector: '[appHoverHighlight]'
+})
+export class HoverHighlightDirective {
+  constructor(private el: ElementRef, private renderer: Renderer2) {}
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.renderer.setStyle(this.el.nativeElement, 'background-color', 'lightblue');
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.renderer.removeStyle(this.el.nativeElement, 'background-color');
+  }
+}
+```
+
+```html
+<!-- app.component.html -->
+<p appHoverHighlight>Hover over this text to highlight it.</p>
+```
+
+---
+
+## **Lab 8: Create a Custom Structural Directive (appUnless)**
+
+### Objective:
+Create a directive that works opposite of `*ngIf`.
+
+### Code:
+```typescript
+// unless.directive.ts
+import { Directive, Input, TemplateRef, ViewContainerRef } from '@angular/core';
+
+@Directive({
+  selector: '[appUnless]'
+})
+export class UnlessDirective {
+  @Input() set appUnless(condition: boolean) {
+    if (!condition) {
+      this.vcRef.createEmbeddedView(this.templateRef);
+    } else {
+      this.vcRef.clear();
+    }
+  }
+
+  constructor(private templateRef: TemplateRef<any>, private vcRef: ViewContainerRef) {}
+}
+```
+
+```html
+<!-- app.component.html -->
+<button (click)="isVisible = !isVisible">Toggle</button>
+<p *appUnless="isVisible">This paragraph is shown when "isVisible" is false.</p>
+```
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  isVisible = true;
+}
+```
+
+---
+
+## **Lab 9: Using Built-in Attribute Directive (ngModel)**
+
+### Objective:
+Two-way data binding using `ngModel`.
+
+### Code:
+```html
+<!-- app.component.html -->
+<input [(ngModel)]="name" placeholder="Enter name">
+<p>Hello, {{ name }}!</p>
+```
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  name = '';
+}
+```
+
+---
+
+## **Lab 10: Custom Directive with Input and Event (clickTracker)**
+
+### Objective:
+Track clicks on an element using a directive.
+
+### Code:
+```typescript
+// click-tracker.directive.ts
+import { Directive, HostListener, Output, EventEmitter } from '@angular/core';
+
+@Directive({
+  selector: '[appClickTracker]'
+})
+export class ClickTrackerDirective {
+  @Output() clickCount = new EventEmitter<number>();
+  private count = 0;
+
+  @HostListener('click')
+  onClick() {
+    this.count++;
+    this.clickCount.emit(this.count);
+  }
+}
+```
+
+```html
+<!-- app.component.html -->
+<button appClickTracker (clickCount)="onCount($event)">Click me</button>
+<p>Clicked {{ clickTimes }} times.</p>
+```
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  clickTimes = 0;
+  onCount(count: number) {
+    this.clickTimes = count;
+  }
+}
+```
+
+---

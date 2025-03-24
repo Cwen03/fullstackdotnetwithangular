@@ -1,0 +1,231 @@
+---
+
+## **Lab 1: Interpolation Binding**
+
+### **Task:** Display a greeting message using interpolation.
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  title = 'Angular Data Binding';
+  username = 'John Doe';
+}
+```
+
+```html
+<!-- app.component.html -->
+<h1>Welcome to {{ title }}!</h1>
+<p>Hello, {{ username }}!</p>
+```
+
+---
+
+## **Lab 2: Property Binding**
+
+### **Task:** Bind a property to set an image URL dynamically.
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  imageUrl = 'https://angular.io/assets/images/logos/angular/angular.png';
+}
+```
+
+```html
+<!-- app.component.html -->
+<img [src]="imageUrl" alt="Angular Logo" width="200" />
+```
+
+---
+
+## **Lab 3: Attribute Binding**
+
+### **Task:** Bind a custom attribute (aria-label) dynamically.
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  buttonLabel = 'Click me!';
+}
+```
+
+```html
+<!-- app.component.html -->
+<button [attr.aria-label]="buttonLabel">{{ buttonLabel }}</button>
+```
+
+---
+
+## **Lab 4: Class Binding**
+
+### **Task:** Apply a CSS class dynamically based on a condition.
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  isActive = true;
+}
+```
+
+```css
+/* styles.css */
+.active {
+  background-color: green;
+  color: white;
+}
+```
+
+```html
+<!-- app.component.html -->
+<div [class.active]="isActive">
+  This div is {{ isActive ? 'active' : 'inactive' }}.
+</div>
+```
+
+---
+
+## **Lab 5: Style Binding**
+
+### **Task:** Apply inline styles dynamically.
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  isSpecial = true;
+}
+```
+
+```html
+<!-- app.component.html -->
+<p [style.color]="isSpecial ? 'blue' : 'black'" [style.fontSize.px]="20">
+  This text is styled dynamically!
+</p>
+```
+
+---
+
+## **Lab 6: Event Binding**
+
+### **Task:** Handle button click events.
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  message = '';
+
+  showMessage() {
+    this.message = 'Button clicked!';
+  }
+}
+```
+
+```html
+<!-- app.component.html -->
+<button (click)="showMessage()">Click Me</button>
+<p>{{ message }}</p>
+```
+
+---
+
+## **Lab 7: Two-Way Data Binding (ngModel)**
+
+### **Task:** Bind input field to a variable.
+
+```typescript
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+})
+export class AppComponent {
+  name = '';
+}
+```
+
+```html
+<!-- app.component.html -->
+<input [(ngModel)]="name" placeholder="Enter your name" />
+<p>Your name is: {{ name }}</p>
+```
+
+```typescript
+// app.module.ts
+import { FormsModule } from '@angular/forms';
+
+@NgModule({
+  imports: [BrowserModule, FormsModule],
+  // ...
+})
+export class AppModule { }
+```
+
+---
+
+## **Lab 8: Combined Binding (Event + Property Binding)**
+
+### **Task:** Disable button conditionally and trigger an event.
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  isDisabled = false;
+
+  toggleButton() {
+    this.isDisabled = !this.isDisabled;
+  }
+}
+```
+
+```html
+<!-- app.component.html -->
+<button [disabled]="isDisabled">Action</button>
+<button (click)="toggleButton()">
+  {{ isDisabled ? 'Enable' : 'Disable' }} the Action Button
+</button>
+```
+
+---
+
+## **Lab 9: Safe Navigation Operator (Elvis Operator) in Binding**
+
+### **Task:** Safely bind nested object properties.
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  user = {
+    profile: {
+      name: 'Alice'
+    }
+  };
+}
+```
+
+```html
+<!-- app.component.html -->
+<p>User Name: {{ user?.profile?.name }}</p>
+```
+
+---
+
+## **Lab 10: Binding with Pipes**
+
+### **Task:** Bind a value with Angular pipes.
+
+```typescript
+// app.component.ts
+export class AppComponent {
+  today = new Date();
+  amount = 1234.56;
+}
+```
+
+```html
+<!-- app.component.html -->
+<p>Today's date: {{ today | date: 'fullDate' }}</p>
+<p>Formatted currency: {{ amount | currency: 'USD' }}</p>
+```
+
+---
